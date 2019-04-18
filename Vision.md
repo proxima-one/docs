@@ -13,6 +13,7 @@ The systems works by using three separate parts:
 - Registry 
 
 ## Mesh 
+The mesh is the logic and communication layer for the p2p network. Through the mesh, 
 
 ## Authenticated Database 
 
