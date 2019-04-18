@@ -1,11 +1,12 @@
-# Vision
+# Ora Protocol
 
+#### The data layer of web 3.0
+
+# Overview
+
+# Product
 
 # Architecture
-
-
-
-# Components
 
 The systems works by using three separate parts: 
 - Mesh 
@@ -18,3 +19,5 @@ The mesh is the logic and communication layer for the p2p network. Through the m
 ## Authenticated Database 
 
 ## Registry 
+
+
