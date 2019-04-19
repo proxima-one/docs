@@ -45,6 +45,9 @@ The systems works by using three separate parts:
 ## Mesh (V1)
 The mesh is the logic and communication layer for the p2p network. Through the mesh, 
 
+> Updates are pushed from the nodes to the mesh, from the mesh they are pushed to neighboring nodes. This means that polling 
+> for events are not necessary.
+
 ## Authenticated Database (V1)
 
 
