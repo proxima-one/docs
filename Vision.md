@@ -55,8 +55,8 @@ The registry is the focal point for the entire protocol. It conrls the anchors f
 # Verfication and Security of data
 
 The verification and security of data can be broken down into two different spaces: 
-- Anchoring 
-- Authentication
+- *Anchoring*
+- *Authentication*
 
 ## Anchoring (V1)
 
