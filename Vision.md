@@ -37,9 +37,9 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 
 # Architecture
 The systems works by using three separate parts: 
-- Mesh 
-- Authenticated Database 
-- Registry 
+- *Mesh* 
+- *Authenticated Database* 
+- *Registry* 
 
 ## Mesh (V1)
 The mesh is the logic and communication layer for the p2p network. Through the mesh, it is possible to enable faster routing, and secure connections. This is done by establishing neighborhoods, based on proximity rather than random indexes (as seen so often with Kademlia).
@@ -61,7 +61,14 @@ The verification and security of data can be broken down into two different spac
 
 ## Anchoring (V1)
 
+### Accumulation
+
+
+
 ### Blockchains
+
+Blockchains are anchored
+
 
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
