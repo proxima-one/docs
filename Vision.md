@@ -12,13 +12,14 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - Limitless scalability
 - Greater security
 
-# Products
+# Products and Implementations
 
 ## Blockchain Index
 
-The greatest 
+The first implementation of the Ora Protocol is as a blockchain index. The data...
 
 ### Example Flow 
+
 
 
 
@@ -44,7 +45,7 @@ The systems works by using three separate parts:
 ## Mesh 
 The mesh is the logic and communication layer for the p2p network. Through the mesh, 
 
-## Authenticated Database 
+## Authenticated Database (V1)
 
 
 
@@ -56,19 +57,25 @@ The registry is the focal point for the entire protocol. It conrls the anchors f
 
 The verification and security of data can be broken down into two different spaces: 
 - Anchoring 
-- Verification
+- Authentication
 
+## Anchoring (V1)
 
-### Anchoring through accumulators 
+### Blockchains
+
+- ##### Proof-of-Work 
+- ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
 
 #### Example 
 
-### Anchoring through signatures
+
+### Signatures
+
+- ##### Signatures 
+- ##### Threshold Signatures 
+- ##### Access control lists
 
 #### Example 
-
-
-### Anchoring through signatures and access control lists
 
 
 ## Authentication (V1)
