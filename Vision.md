@@ -85,7 +85,7 @@ The authentication of members of the mesh, and overlay network can be done in se
 - Signature-based Authentication
 
 ### Smart contract-based Authentication
-
+ 
 
 ### Signature-based Authentication
 
