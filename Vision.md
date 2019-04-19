@@ -12,16 +12,28 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - Limitless scalability
 - Greater security
 
-# Product
+# Products
 
 ## Blockchain Index
 
 The greatest 
 
+### Example Flow 
+
+
 
 ## DApp Data
 
-## Extra and Future Work
+
+### Example Flow
+
+
+## Future Releases 
+
+- ### Hybrid Data 
+
+- ### External Data 
+
 
 # Architecture
 The systems works by using three separate parts: 
