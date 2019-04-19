@@ -49,6 +49,7 @@ The mesh is the logic and communication layer for the p2p network. Through the m
 
 
 ## Registry 
+The registry is the focal point for the entire protocol. It conrls the anchors for the data spaces, and providers the authentication of the of nodes connected into the mesh. The registry of data spaces (sometimes called services), contains information on bootstraps, the id of the database, and connections to anchor points in order verify the authenticity of the data points for the space.
 
 
 # Security: Anchoring and Authentication
