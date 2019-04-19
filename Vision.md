@@ -12,17 +12,22 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - Limitless scalability
 - Greater security
 
-
-
 # Product
+
+## Blockchain Index
+
+The greatest 
+
+
+## DApp Data
+
+## Extra and Future Work
 
 # Architecture
 The systems works by using three separate parts: 
 - Mesh 
 - Authenticated Database 
 - Registry 
-
-
 
 ## Mesh 
 The mesh is the logic and communication layer for the p2p network. Through the mesh, 
@@ -32,6 +37,18 @@ The mesh is the logic and communication layer for the p2p network. Through the m
 
 
 ## Registry 
+
+
+# Authorization: Anchoring and Authentication
+
+## Anchoring 
+
+### 
+
+### 
+## Authentication (V1)
+
+The authentication of the .. 
 
 
 
