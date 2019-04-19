@@ -23,20 +23,15 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
-### Example Flow 
-
 
 ## DApp Data
 
 
-### Example Flow
-
-
 ## Future Releases 
 
-- ## Hybrid Data 
+- #### Hybrid Data 
 
-- ## External Data 
+- #### External Data 
 
 
 # Architecture
@@ -79,9 +74,14 @@ Blockchains are anchored
 
 ### Signatures
 
+Signatures can involve the ... 
+
+
 - ##### Signatures 
 - ##### Threshold Signatures 
-- ##### Access control lists 
+
+
+### Access control lists 
 
 
 ## Authentication (V1)
