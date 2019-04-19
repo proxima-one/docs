@@ -42,14 +42,13 @@ The systems works by using three separate parts:
 - Authenticated Database 
 - Registry 
 
-## Mesh 
+## Mesh (V1)
 The mesh is the logic and communication layer for the p2p network. Through the mesh, 
 
 ## Authenticated Database (V1)
 
 
-
-## Registry 
+## Registry (V1)
 The registry is the focal point for the entire protocol. It conrls the anchors for the data spaces, and providers the authentication of the of nodes connected into the mesh. The registry of data spaces (sometimes called services), contains information on bootstraps, the id of the database, and connections to anchor points in order verify the authenticity of the data points for the space.
 
 
@@ -81,6 +80,4 @@ The verification and security of data can be broken down into two different spac
 ## Authentication (V1)
 
 The authentication of the .. 
-
-
 
