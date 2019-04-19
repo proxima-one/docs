@@ -68,7 +68,6 @@ The verification and security of data can be broken down into two different spac
 ### Accumulation
 
 
-
 ### Blockchains
 
 Blockchains are anchored
@@ -77,24 +76,28 @@ Blockchains are anchored
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
 
-#### Example 
-
 
 ### Signatures
 
 - ##### Signatures 
 - ##### Threshold Signatures 
-- ##### Access control lists
-
-#### Example 
+- ##### Access control lists 
 
 
 ## Authentication (V1)
 
-The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support.
+The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
 
 ### Smart contract-based Authentication
- 
+Smart contract-based authentication involves using a smart contract to mint API/authentication tokens. These tokens will be represented as events, with the smart contract referenced in the registry itself. This enables for secure and trustless creation of authentication tokens.  
+
+```javascript
+event(address, address, key, id)
+```
 
 ### Signature-based Authentication
+The signature-based authentication scheme is quite similar to traditional signature tokens. With the owner(s) signing a token associated with the public key of the sender.
 
+```javascript
+(address, key, id, signature)
+```
