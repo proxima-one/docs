@@ -15,12 +15,9 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - ### Limitless scalability
 - ### Greater security
 
-
-
-# Products and Implementations
+# Solution 
 
 ## Blockchain Index
-
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
 
@@ -28,9 +25,7 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 
 
 ## Future Releases 
-
 - *Hybrid Data* 
-
 - *External Data* 
 
 
@@ -60,13 +55,9 @@ The verification and security of data can be broken down into two different spac
 
 ## Anchoring (V1)
 
-### Accumulation
-
-
 ### Blockchains
 
 Blockchains are anchored
-
 
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
@@ -74,15 +65,17 @@ Blockchains are anchored
 
 ### Signatures
 
-Signatures can involve the ... 
+Signatures involve the owner(s) of a data space, signing updates in order to give the mesh the ability to verify. In most cases these will be external data sources, but initially blockchains might use signatures as a way for fast verification. 
 
-
-- ##### Signatures 
-- ##### Threshold Signatures 
+- *Signatures*
+- *Threshold Signatures*
 
 
 ### Access control lists 
 
+
+### Accumulators
+Using homomorphic encryption it is possible to develop accumulators.
 
 ## Authentication (V1)
 
