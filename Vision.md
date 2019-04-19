@@ -39,13 +39,23 @@ The mesh is the logic and communication layer for the p2p network. Through the m
 ## Registry 
 
 
-# Authorization: Anchoring and Authentication
+# Security: Anchoring and Authentication
 
-## Anchoring 
+## Anchoring and Verifying data 
 
-### 
 
-### 
+### Anchoring through accumulators 
+
+#### Example 
+
+### Anchoring through signatures
+
+#### Example 
+
+
+### Anchoring through signatures and access control lists
+
+
 ## Authentication (V1)
 
 The authentication of the .. 
