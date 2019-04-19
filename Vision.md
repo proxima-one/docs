@@ -29,9 +29,9 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 
 ## Future Releases 
 
-- #### Hybrid Data 
+- *Hybrid Data* 
 
-- #### External Data 
+- *External Data* 
 
 
 # Architecture
