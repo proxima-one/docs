@@ -87,9 +87,7 @@ Blockchains are anchored
 
 ## Authentication (V1)
 
-The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support:
-- Smart Contract-based Authentication
-- Signature-based Authentication
+The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support.
 
 ### Smart contract-based Authentication
  
