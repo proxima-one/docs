@@ -16,11 +16,9 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 
 ## Blockchain Index
 
-The first implementation of the Ora Protocol is as a blockchain index. The data...
+The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
 ### Example Flow 
-
-
 
 
 ## DApp Data
