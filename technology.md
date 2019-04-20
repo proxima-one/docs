@@ -24,6 +24,7 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 ## DApp Data
 
 
+
 ## Future Releases 
 - *Hybrid Data* 
 - *External Data* 
@@ -48,20 +49,19 @@ The authenticated database is responsible for maintaining the structure and auth
 The registry is the focal point for the entire protocol. It conrls the anchors for the data spaces, and providers the authentication of the of nodes connected into the mesh. The registry of data spaces (sometimes called services), contains information on bootstraps, the id of the database, and connections to anchor points in order verify the authenticity of the data points for the space.
 
 # Verfication and Security of data
-
 The verification and security of data can be broken down into two different spaces: 
 - *Anchoring*
 - *Authentication*
 
 ## Anchoring (V1)
 
-### Blockchains
-
-Blockchains are anchored
+### Recursive Zero Knowledge Proofs
+Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
 
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
 
+This works with both types of blockchain and is seen in such projects as Corda. 
 
 ### Signatures
 
@@ -69,13 +69,11 @@ Signatures involve the owner(s) of a data space, signing updates in order to giv
 
 - *Signatures*
 - *Threshold Signatures*
+- *BLS Signatures*
 
 
 ### Access control lists 
-
-
-### Accumulators
-Using homomorphic encryption it is possible to develop accumulators.
+Instead of having a single governing entity, it is possible to give different members different accesses and verify these. Using this method, transaction throughput and data ownership go hand-in-hand.
 
 ## Authentication (V1)
 
