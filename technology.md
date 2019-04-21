@@ -28,12 +28,13 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 - *Hybrid Data* 
 - *External Data* 
 
-
 # Architecture
 The systems works by using three separate parts: 
 - *Mesh* 
 - *Authenticated Database* 
 - *Registry* 
+
+### Architecture image
 
 ## Mesh (V1)
 The mesh is the logic and communication layer for the p2p network. Through the mesh, it is possible to enable faster routing, and secure connections. This is done by establishing neighborhoods, based on proximity rather than random indexes (as seen so often with Kademlia).
@@ -53,6 +54,8 @@ The verification and security of data can be broken down into two different spac
 - *Authentication*
 
 ## Anchoring (V1)
+
+### anchoring image
 
 ### Recursive Zero Knowledge Proofs
 Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
@@ -77,6 +80,8 @@ Instead of having a single governing entity, it is possible to give different me
 ## Authentication (V1)
 
 The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
+
+### Authentication image
 
 ### Smart contract-based Authentication
 Smart contract-based authentication involves using a smart contract to mint API/authentication tokens. These tokens will be represented as events, with the smart contract referenced in the registry itself. This enables for secure and trustless creation of authentication tokens.  
