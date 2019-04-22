@@ -26,9 +26,10 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 
 
 - ### Blockchain Index
-The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
-- ### DApp Data
+The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
 
+- ### DApp Index
+The DApp index represents a filter 
 
 ## Future Releases 
 - *Hybrid Data* 
