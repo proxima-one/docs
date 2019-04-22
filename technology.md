@@ -22,7 +22,6 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 # Solution 
 
 
-
 ## Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
@@ -67,13 +66,20 @@ The verification and security of data can be broken down into two different spac
 
 ## Anchoring (V1)
 
+Anchoring is used...
+
 ![](anchoring.png)
 
-### Recursive Zero Knowledge Proofs
-Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
 
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
+
+
+### Accumulators
+
+
+### Recursive Zero Knowledge Proofs
+Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
 
 This works with both types of blockchain and is seen in such projects as Corda. 
 
@@ -90,7 +96,6 @@ Signatures involve the owner(s) of a data space, signing updates in order to giv
 Instead of having a single governing entity, it is possible to give different members different accesses and verify these. Using this method, transaction throughput and data ownership go hand-in-hand.
 
 ## Authentication (V1)
-
 The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
 
 ### Smart contract-based Authentication
