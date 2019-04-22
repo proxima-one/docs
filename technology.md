@@ -2,12 +2,17 @@
 
 ### The data layer of web 3.0
 
-# Overview
-The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
+The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. 
 
-- Move towards zero latency
-- Serving data to the edge from the edge
-- Consensusless Reads and Writes
+# Overview
+
+
+In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
+
+- *Move towards zero latency*
+- *Serving data to the edge from the edge*
+- *Consensusless Reads and Writes*
+
 
 # Features
 
@@ -17,16 +22,27 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 
 # Solution 
 
+
+![](architecture.png)
+
+
+
 ## Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
 
+![](architecture.png)
+
 ## DApp Data
+
+
+![](architecture.png)
 
 
 ## Future Releases 
 - *Hybrid Data* 
 - *External Data* 
+
 
 # Architecture
 The systems works by using three separate parts: 
@@ -80,8 +96,6 @@ Instead of having a single governing entity, it is possible to give different me
 ## Authentication (V1)
 
 The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
-
-### Authentication image
 
 ### Smart contract-based Authentication
 Smart contract-based authentication involves using a smart contract to mint API/authentication tokens. These tokens will be represented as events, with the smart contract referenced in the registry itself. This enables for secure and trustless creation of authentication tokens.  
