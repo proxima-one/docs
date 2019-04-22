@@ -34,7 +34,7 @@ The systems works by using three separate parts:
 - *Authenticated Database* 
 - *Registry* 
 
-### Architecture image
+![](architecture.png)
 
 ## Mesh (V1)
 The mesh is the logic and communication layer for the p2p network. Through the mesh, it is possible to enable faster routing, and secure connections. This is done by establishing neighborhoods, based on proximity rather than random indexes (as seen so often with Kademlia).
