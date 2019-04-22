@@ -55,7 +55,7 @@ The verification and security of data can be broken down into two different spac
 
 ## Anchoring (V1)
 
-### anchoring image
+![](anchoring.png)
 
 ### Recursive Zero Knowledge Proofs
 Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
