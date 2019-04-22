@@ -29,7 +29,7 @@ The overall solution is designed to allow the authentication of data spaces. The
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
 
 - ### DApp Index
-The DApp index represents a filter 
+The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to 
 
 ## Future Releases 
 - *Hybrid Data* 
@@ -72,12 +72,10 @@ The verification and security of data can be broken down into two different spac
 
 
 ### Accumulators
-
+Accumulators provide a way to anchor data, and are being used in production. Through the use of lt_hash, and other homomorphic encryption techniques it becomes fast to verify blocks in the current state, and using dynamic accumulators it is possible to determine if blocks are included in the main chain. 
 
 ### Recursive Zero Knowledge Proofs
-Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain.
-
-This works with both types of blockchain and is seen in such projects as Corda. 
+Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain. This works with both types of blockchain and is seen in such projects as Corda. 
 
 ### Signatures
 
