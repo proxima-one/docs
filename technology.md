@@ -4,8 +4,7 @@
 
 The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. 
 
-# Overview
-
+![](overview.png)
 
 In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
 
@@ -23,20 +22,17 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 # Solution 
 
 
-![](architecture.png)
-
-
 
 ## Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
 
 
-![](architecture.png)
+![](overview.png)
 
 ## DApp Data
 
 
-![](architecture.png)
+![](overview.png)
 
 
 ## Future Releases 
