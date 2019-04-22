@@ -20,7 +20,7 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 - ### Greater security
 
 # Solution 
-
+The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
 
 ![](blockchain_index.png)
 
@@ -64,8 +64,6 @@ The verification and security of data can be broken down into two different spac
 - *Authentication*
 
 ## Anchoring (V1)
-
-Anchoring is used...
 
 ![](anchoring.png)
 
