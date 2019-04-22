@@ -22,21 +22,19 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 # Solution 
 
 
-## Blockchain Index
+![](blockchain_index.png)
+
+
+- ### Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through the Ora Node which 
-
-
-![](overview.png)
-
-## DApp Data
-
-
-![](overview.png)
+- ### DApp Data
 
 
 ## Future Releases 
 - *Hybrid Data* 
 - *External Data* 
+
+![](future_updates.png)
 
 
 # Architecture
@@ -69,7 +67,6 @@ The verification and security of data can be broken down into two different spac
 Anchoring is used...
 
 ![](anchoring.png)
-
 
 - ##### Proof-of-Work 
 - ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
