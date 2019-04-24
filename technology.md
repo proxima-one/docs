@@ -5,7 +5,7 @@
 The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
 
 - #### Authenticated and trustless data spaces
-- #### Limitless scalability
+- #### Easy scalability through open membership and edge participation
 - #### Greater security and flexibility
 - #### Benefits of production grade frameworks.
 
@@ -21,7 +21,7 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to store variables for decentralized applications. Moreover, there is the ability to combine the values from multiple different DApps or even chains.
 
 - ### Off-chain Data 
-The applications for storing off-chain data in a trustless manner
+The applications for storing off-chain data in a trustless manner are numerous, with the initial use case being for zero-knowledge rollups and smart contract data held off-chain.
 
 ## Anatomy of a query
 
