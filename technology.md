@@ -24,7 +24,6 @@ The overall solution is designed to allow the authentication of data spaces. The
 
 ![](blockchain_index.png)
 
-
 - ### Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
 
