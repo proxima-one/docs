@@ -8,6 +8,11 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - *Serving data to the edge from the edge*
 - *Consensusless Reads and Writes*
 
+## Features
+- #### Authenticated and trustless data spaces
+- #### Limitless scalability
+- #### Greater security
+
 # Solution 
 The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
 
@@ -21,11 +26,6 @@ The DApp index represents a filter based on one or several contract addresses. T
 
 - ### External Data 
 The  
-
-## Features
-- #### Authenticated and trustless data spaces
-- #### Limitless scalability
-- #### Greater security
 
 
 ## Anatomy of a query
