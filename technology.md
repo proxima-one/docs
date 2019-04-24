@@ -18,21 +18,14 @@ The overall solution is designed to allow the authentication of data spaces. The
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
 
 - ### DApp Index
-The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to 
+The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to store variables for decentralized applications. Moreover, there is the ability to combine the values from multiple different DApps or even chains.
 
-- ### External Data 
-The  
-
+- ### Off-chain Data 
+The applications for storing off-chain data in a trustless manner
 
 ## Anatomy of a query
-The 
-
-
 
 ![](query_anatomy.png)
-
-
-
 
 
 # Architecture
@@ -65,13 +58,13 @@ The verification and security of data can be broken down into two different spac
 ![](anchoring.png)
 
 ### Blockchain Data
-The power of blockchains are that they are trustless and have methods builtin for verification or anchoring of data. This means that we can use these methods to anchor chains, and their data. 
+The power of blockchains are that they are trustless and have methods builtin for verification or anchoring of data. This means that we can use these methods to anchor chains, and thus their data. 
 
 #### Proof-of-Work 
-For Proof-of-Work chains the longest chain can be found through total work, and verified through the hash of the chain.
+For Proof-of-Work chains the longest chain can be found through total work, and verified through the hash of the chain. This is how the SPV clients ensure that blocks are correct. 
 
 #### Proof-of-Stake
-Proof-of-State Chains can verified through the signatures, and the hash can be verified by taking the hash of the elements.
+Proof-of-State Chains can verified through the signatures, and the hash can be verified by taking the hash of the elements. Furthermore, signatures of validators provide an even easier metric for checking validity of blocks.
 
 Other methods to improve verification speed including snapshotting blocks and using accumulators. 
 
