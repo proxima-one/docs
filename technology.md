@@ -2,20 +2,11 @@
 
 ### The data layer of web 3.0
 
-The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. 
-
-In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
+The Ora Protocol combines authenticated datastructures and peer-to-peer topology, to enable the next generation of decentralized infrastructure. It moves away from consensus and instead anchors data spaces to static verification systems, and structuring data in an Authenticated NoSQL database. In doing this, Ora Protocol is able to change the current paradaigm from server-client, to trustless network of data sets. This has several important goals:
 
 - *Move towards zero latency*
 - *Serving data to the edge from the edge*
 - *Consensusless Reads and Writes*
-
-
-# Features
-
-- ### Authenticated and trustless data spaces
-- ### Limitless scalability
-- ### Greater security
 
 # Solution 
 The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
@@ -25,14 +16,11 @@ The overall solution is designed to allow the authentication of data spaces. The
 
 
 
-
-
-
 ```javascript
-query {
-  dataIndex(id: "qmartt") {
+Ora(token: "token") {
+  Index(id: "cardano") {
     anchor
-    Blocks(hash: "hash") {
+    Blocks(hash: "Hash") {
       header
       Transactions {
         id
@@ -42,7 +30,6 @@ query {
   }
 }
 ```
-
 
 - ### Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
@@ -58,6 +45,13 @@ The DApp index represents a filter based on one or several contract addresses. T
 ![](blockchain_index.png)
 
 ![](future_updates.png)
+
+
+# Features
+
+- ### Authenticated and trustless data spaces
+- ### Limitless scalability
+- ### Greater security
 
 
 # Architecture
