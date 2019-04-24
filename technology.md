@@ -13,9 +13,6 @@ The overall solution is designed to allow the authentication of data spaces. The
 
 
 
-
-
-
 ```javascript
 Ora(token: "token") {
   Index(id: "cardano") {
@@ -37,21 +34,40 @@ The first implementation of the Ora Protocol is as a blockchain index. The block
 - ### DApp Index
 The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to 
 
-## Future Releases 
-- *Hybrid Data* 
-- *External Data* 
-
-
-![](blockchain_index.png)
-
-![](future_updates.png)
+- ### External Data 
+The  
 
 
 # Features
+- #### Authenticated and trustless data spaces
+- #### Limitless scalability
+- #### Greater security
 
-- ### Authenticated and trustless data spaces
-- ### Limitless scalability
-- ### Greater security
+
+# Anatomy of a query
+
+```javascript
+Ora(token: "token") {
+  Index(id: "cardano") {
+    anchor
+    Blocks(hash: "Hash") {
+      header
+      Transactions {
+        id
+      }
+    	Proof
+    }
+  }
+}
+```
+
+- Registry
+
+- [Authenticated Database(## Authenticated Database (V1))
+
+- Anchoring
+
+- Authentication
 
 
 # Architecture
@@ -61,7 +77,6 @@ The systems works by using three separate parts:
 - *Registry* 
 
 ![](architecture.png)
-
 
 ## Components
 
@@ -114,7 +129,6 @@ Instead of having a single governing entity, it is possible to give different me
 
 ## Authentication (V1)
 The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
-
 
 ### Smart contract-based Authentication
 Smart contract-based authentication involves using a smart contract to mint API/authentication tokens. These tokens will be represented as events, with the smart contract referenced in the registry itself. This enables for secure and trustless creation of authentication tokens.  
