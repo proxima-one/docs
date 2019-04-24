@@ -22,7 +22,25 @@ In doing this, Ora Protocol is able to change the current paradaigm from server-
 # Solution 
 The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
 
-![](blockchain_index.png)
+
+
+
+
+```javascript
+query {
+  dataIndex(id: "qmartt") {
+    anchor
+    Blocks(hash: "hash") {
+      header
+      Transactions {
+        id
+      }
+    	Proof
+    }
+  }
+}
+```
+
 
 - ### Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
@@ -33,6 +51,9 @@ The DApp index represents a filter based on one or several contract addresses. T
 ## Future Releases 
 - *Hybrid Data* 
 - *External Data* 
+
+
+![](blockchain_index.png)
 
 ![](future_updates.png)
 
