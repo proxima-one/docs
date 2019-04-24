@@ -10,10 +10,9 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 - #### Benefits of production grade frameworks.
 
 # Solution 
-The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
+The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations, and storage enable data indexes to be used for many different applications. 
 
 ![](solution_1.png)
-
 
 - ### Blockchain Index
 The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
@@ -25,9 +24,8 @@ The DApp index represents a filter based on one or several contract addresses. T
 The  
 
 
-
 ## Anatomy of a query
-The
+The 
 
 
 
