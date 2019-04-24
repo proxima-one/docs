@@ -11,7 +11,40 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 # Solution 
 The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
 
+![](solution.png)
 
+- ### Blockchain Index
+The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
+
+- ### DApp Index
+The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to 
+
+- ### External Data 
+The  
+
+## Features
+- #### Authenticated and trustless data spaces
+- #### Limitless scalability
+- #### Greater security
+
+
+## Anatomy of a query
+The 
+
+```javascript
+Ora(token: "token") {
+  Index(id: "cardano") {
+    anchor
+    Blocks(hash: "Hash") {
+      header
+      Transactions {
+        id
+      }
+    	Proof
+    }
+  }
+}
+```
 
 ```javascript
 Ora(token: "token") {
@@ -44,47 +77,6 @@ Ora(token: "token") {
  }
 }
 ```
-
-- ### Blockchain Index
-The first implementation of the Ora Protocol is as a blockchain index. The blocks come through an Ora Node, then filter the blocks into the respective headers, transactions, receipts, and logs. From this position, it is possible to look at state, events, and transactions themselves. 
-
-- ### DApp Index
-The DApp index represents a filter based on one or several contract addresses. Through this, it is possible to 
-
-- ### External Data 
-The  
-
-
-# Features
-- #### Authenticated and trustless data spaces
-- #### Limitless scalability
-- #### Greater security
-
-
-# Anatomy of a query
-
-```javascript
-Ora(token: "token") {
-  Index(id: "cardano") {
-    anchor
-    Blocks(hash: "Hash") {
-      header
-      Transactions {
-        id
-      }
-    	Proof
-    }
-  }
-}
-```
-
-- Registry
-
-- [Authenticated Database]
-
-- Anchoring
-
-- Authentication
 
 
 # Architecture
