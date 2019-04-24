@@ -63,7 +63,7 @@ Ora(token: "token") {
 
 - Registry
 
-- [Authenticated Database(## Authenticated Database (V1))
+- [Authenticated Database](## Authenticated Database (V1))
 
 - Anchoring
 
