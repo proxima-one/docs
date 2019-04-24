@@ -67,30 +67,33 @@ The verification and security of data can be broken down into two different spac
 
 ![](anchoring.png)
 
-- ##### Proof-of-Work 
-- ##### Proof-of-stake/Proof-of-Authority/Delegated-Proof-of-Stake 
+### Blockchain Data
+The power of blockchains are that they are trustless and have methods builtin for verification or anchoring of data. This means that we can use these methods to anchor chains, and their data. 
 
+#### Proof-of-Work 
+For Proof-of-Work chains the longest chain can be found through total work, and verified through the hash of the chain.
 
-### Accumulators
-Accumulators provide a way to anchor data, and are being used in production. Through the use of lt_hash, and other homomorphic encryption techniques it becomes fast to verify blocks in the current state, and using dynamic accumulators it is possible to determine if blocks are included in the main chain. 
+#### Proof-of-Stake
+Proof-of-State Chains can verified through the signatures, and the hash can be verified by taking the hash of the elements.
 
-### Recursive Zero Knowledge Proofs
-Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain. This works with both types of blockchain and is seen in such projects as Corda. 
+Other methods to improve verification speed including snapshotting blocks and using accumulators. 
 
-### Signatures
+### Accumulators and Recursive Zero Knowledge Proofs
+Accumulators provide a way to anchor data, and are being used in production. Through the use of lt_hash, and other homomorphic encryption techniques it becomes fast to verify blocks in the current state, and using dynamic accumulators it is possible to determine if blocks are included in the main chain. Proofs of this variety, use witnesses to establish membership of elements.[https://www.cs.purdue.edu/homes/ninghui/papers/accumulator_acns07.pdf](https://www.cs.purdue.edu/homes/ninghui/papers/accumulator_acns07.pdf). Using recursive zero knowledge proofs with the genesis block, it is possible to prove that a block is in a blockchain. This works with both types of blockchain and is seen in such projects as Corda. 
 
+### Signatures and Consensus for Off-chain Data
 Signatures involve the owner(s) of a data space, signing updates in order to give the mesh the ability to verify. In most cases these will be external data sources, but initially blockchains might use signatures as a way for fast verification. 
 
 - *Signatures*
 - *Threshold Signatures*
 - *BLS Signatures*
 
-
-### Access control lists 
+##### Access control lists 
 Instead of having a single governing entity, it is possible to give different members different accesses and verify these. Using this method, transaction throughput and data ownership go hand-in-hand.
 
 ## Authentication (V1)
 The authentication of members of the mesh, and overlay network can be done in several ways, but the current version will support two forms of authentication. Both of these forms of authentication assume each party has an associated public and private key.
+
 
 ### Smart contract-based Authentication
 Smart contract-based authentication involves using a smart contract to mint API/authentication tokens. These tokens will be represented as events, with the smart contract referenced in the registry itself. This enables for secure and trustless creation of authentication tokens.  
