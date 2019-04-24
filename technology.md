@@ -12,7 +12,7 @@ The Ora Protocol combines authenticated datastructures and peer-to-peer topology
 # Solution 
 The overall solution is designed to allow the authentication of data spaces. The powerful filtering and aggregations enable data indexes to be used for many different applications.
 
-![](solution.png)
+![](solution_1.png)
 
 
 - ### Blockchain Index
@@ -31,6 +31,7 @@ The
 
 
 
+![](query_anatomy.png)
 
 
 
