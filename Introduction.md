@@ -28,24 +28,26 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 
 ## Features
 - Events, State
-Filtering* (soundness, not completeness)
-Range* (soundness, not completeness)
-Blockchain agnostic
-Authenticated Datastore
+- Filtering* (soundness, not completeness)
+- Range* (soundness, not completeness)
+- Blockchain agnostic
+
+## Authenticated Datastore
 The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
 
 Along with adding features like range queries and load-balancing, Ruffle provides the default authentication and performance seen in the Urkel database. Our data store provides Merkle proofs for data to ensure the authenticity and immutability of all data within it.
-Auditing 
+
+## Auditing 
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. 
 This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
 
 Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits like:
 
-Example Audits
+### Example Audits
 
-Is this block a part of the Ethereum block? 
-Is this transaction really embedded in this block?
-Is this state located in the state trie for the current block?
+- Is this block a part of the Ethereum block? 
+- Is this transaction really embedded in this block?
+- Is this state located in the state trie for the current block?
 
 
 Audits like these can be called within a query to guarantee that the information provided is correct. Audits can also be chained together in a recursive manner, this is known as an audit trail. As our product progresses, audits can be updated and added to improve the security and rigor of the audit itself. 
