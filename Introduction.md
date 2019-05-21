@@ -60,7 +60,31 @@ Audits and audit trails would take a lot of time if they are used for every quer
 TODO
 
 ## Security Considerations
-TODO
+
+There are a variety of different security considerations that must be addressed in this situation. 
+
+
+- ### Data needs to be verified
+
+- ### Verification functions and libraries must be consistent
+
+- ### Audits can be fooled if they simply check equality
+
+- ### Ordering of updates and synchronization for the data structure
+
+- ### Lazy verification from clients
+
+- ### Anchoring of data structures
+
+- ### What occurs in the instance of a fork?
+
+- ### Sending bad data, or validating from the incorrect Merkle root
+
+- ### Serving stale data from correct root
+
+- ### Proof-of-completeness for Range queries and filters
+
+
 
 
 
