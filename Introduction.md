@@ -40,7 +40,7 @@ The data contained within each identity is associated with the schema of the ent
 This is the *proof-of-membership* within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
 
 #### Audit
-The audit provides a *Proof-of-Correctness* for the entity that is being queried.This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
+The audit provides a *Proof-of-Correctness* for the entity that is being queried. This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
  
 
 ## Authenticated Datastore
