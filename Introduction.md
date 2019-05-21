@@ -39,7 +39,6 @@ Each *entity* within a query is composed of the following attributes:
 The data contained within each identity is associated with the schema of the entity itself. This is what the query is looking at.
 #### Proof
 This is the *proof-of-membership* within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
-
 #### Audit
 The audit provides a *Proof-of-Correctness* for the entity that is being queried. This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
 
@@ -85,9 +84,7 @@ There are a variety of different security considerations that must be addressed 
 
 - ### What occurs in the instance of a fork?
 
-- ### Sending bad data, or validating from the incorrect Merkle root
-
-- ### Serving stale data from correct root
+- ### Sending bad data, validating from the incorrect Merkle root, or serving stale data from correct root
 
 - ### Proof-of-completeness for Range queries and filters
 
