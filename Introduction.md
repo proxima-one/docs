@@ -28,13 +28,20 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 - Blockchain agnostic
 
 ## Queries
-
+Queries in the Proxima.
 
 ![](query.png)
 
+Each entity within a query is composed of the following attributes: 
+
 - ### Data
+The data contained within the entity 
+
 - ### Proof
+This is the proof-of-membership within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
+
 - ### Audit
+ 
 
 ## Authenticated Datastore
 The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
@@ -82,6 +89,4 @@ There are a variety of different security considerations that must be addressed 
 - ### Serving stale data from correct root
 
 - ### Proof-of-completeness for Range queries and filters
-
-
 
