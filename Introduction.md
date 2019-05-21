@@ -18,10 +18,6 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 ## How do we do it?
 Ora Protocol provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
 
-
-### TODO diagram 
-
-
 ### Deployment
 Deploy to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution. We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
 
@@ -32,7 +28,12 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 - Blockchain agnostic
 
 ## Queries
-### TODO explanation plus diagram
+
+![](query.png)
+
+- #### Data
+- #### Proof
+- #### Audit
 
 ## Authenticated Datastore
 The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
