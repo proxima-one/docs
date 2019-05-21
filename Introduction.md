@@ -32,21 +32,23 @@ Queries in Proxima, are given responses that are broken into entities. These ent
 
 ![](query.png)
 
-Each entity within a query is composed of the following attributes: 
+Each *entity* within a query is composed of the following attributes: 
 
-- ### Data
+#### Data
 The data contained within each identity is associated with the schema of the entity itself. This is what the query is looking at.
+#### Proof
+This is the *proof-of-membership* within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
 
-- ### Proof
-This is the proof-of-membership within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
-
-- ### Audit
+#### Audit
+The audit provides a *Proof-of-Correctness* for the entity that is being queried.This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
  
 
 ## Authenticated Datastore
-The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
+The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie (FFMT). We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
 
 Along with adding features like range queries and load-balancing, Ruffle provides the default authentication and performance seen in the Urkel database. Our data store provides Merkle proofs for data to ensure the authenticity and immutability of all data within it.
+
+
 
 ## Auditing 
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
@@ -65,10 +67,9 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## Security Considerations
+## Considerations
 
-There are a variety of different security considerations that must be addressed in this situation. 
-
+There are a variety of different security considerations that must be addressed within Proxima. 
 
 - ### Data needs to be verified
 
