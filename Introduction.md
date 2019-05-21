@@ -56,9 +56,6 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## Next Steps
-TODO
-
 ## Security Considerations
 
 There are a variety of different security considerations that must be addressed in this situation. 
@@ -85,6 +82,7 @@ There are a variety of different security considerations that must be addressed 
 - ### Proof-of-completeness for Range queries and filters
 
 
-
+## Next Steps
+TODO
 
 
