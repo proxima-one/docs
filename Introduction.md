@@ -29,11 +29,12 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 
 ## Queries
 
+
 ![](query.png)
 
-- #### Data
-- #### Proof
-- #### Audit
+- ### Data
+- ### Proof
+- ### Audit
 
 ## Authenticated Datastore
 The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
