@@ -19,7 +19,7 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 Ora Protocol provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
 
 
-TODO diagram 
+### TODO diagram 
 
 
 ### Deployment
@@ -32,7 +32,7 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 - Blockchain agnostic
 
 ## Queries
-TODO explanation plus diagram
+### TODO explanation plus diagram
 
 ## Authenticated Datastore
 The Ora Protocol uses Ruffle, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie. We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. 
@@ -42,7 +42,7 @@ Along with adding features like range queries and load-balancing, Ruffle provide
 ## Auditing 
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
 
-TODO diagrams
+### TODO diagrams
 
 Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits like:
 
@@ -81,8 +81,5 @@ There are a variety of different security considerations that must be addressed 
 
 - ### Proof-of-completeness for Range queries and filters
 
-
-## Next Steps
-TODO
 
 
