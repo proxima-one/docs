@@ -28,7 +28,7 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 - Blockchain agnostic
 
 ## Queries
-Queries in Proxima, are given responses that are broken into entities. These entities represent the individual data records that are being requested in the query itself. Since they are designed to be verifiable, they have extra components.
+Queries in Proxima, are given responses that are broken into entities. These entities represent the individual data records that are being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
 
 ![](query.png)
 
