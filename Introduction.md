@@ -35,7 +35,7 @@ Queries in the Proxima.
 Each entity within a query is composed of the following attributes: 
 
 - ### Data
-The data contained within the entity 
+The data contained within each identity is associated with the schema of the entity itself. This is what the query is looking at.
 
 - ### Proof
 This is the proof-of-membership within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
