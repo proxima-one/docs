@@ -23,9 +23,10 @@ Deploy to our hosting DNS service through a manifest that defines data sources, 
 
 ### Features
 - Events, State
-- Filtering* (soundness, not completeness)
-- Range* (soundness, not completeness)
+- Filtering* (soundness, not completeness), Range* (soundness, not completeness)
 - Blockchain agnostic
+- Trustless data 
+- Performant queries
 
 ## Queries
 Queries in Proxima, are given responses that are broken into entities. Each entity represents an individual data record that is being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
