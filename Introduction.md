@@ -50,12 +50,32 @@ Note: the index nodes do not actually store any "subgraphs", they simply connect
 ### Query Nodes 
 Query nodes are responsible for storing and providing data for subgraphs. Query nodes can be deployed to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution.
 
-
-
 ### Subgraphs
+
 ## TODOs Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
 
+```
+subgraph
+  entities:
+    - ...
+  schema: 
+    - ...
+  audits:
+    - ...
+  datasources: ...
+    datasource:
+      type:
+      verification:
+      audits:
+      ingestor:
+      mapping:
+      - handlers
+      - abi/schema
+```
 
+#### Datasources
+- Subgraph
+- External data
 
 
 ## Queries
@@ -94,25 +114,25 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## TODOs: Considerations
+## TODO Considerations
 
 There are a variety of different security considerations that must be addressed within Proxima. 
 
-- ### Data needs to be verified
-
 - ### Verification functions and libraries must be consistent
+This can be done in the same way.
 
 - ### Audits can be fooled if they simply check equality
+ Data needs to be verified
 
-- ### Ordering of updates and synchronization for the data structure
-
-- ### Lazy verification from clients
+- ### Cost of complete verification from clients
 
 - ### Anchoring of data structures
 
 - ### What occurs in the instance of a fork?
 
 - ### Sending bad data, validating from the incorrect Merkle root, or serving stale data from correct root
+
+- ### Ordering of updates and synchronization for the data structure
 
 - ### Proof-of-completeness for Range queries and filters
 
