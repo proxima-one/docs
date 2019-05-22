@@ -17,6 +17,9 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 
 ## Our Product
 ### TODO Why do developers want to use this? What benefit is it to them? How do they use it?
+ 
+We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+
 
 ### Features
 - Events, State
@@ -36,14 +39,11 @@ The index node is responsible for connecting the queries to the correct "subgrap
 Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes.
 
 ### Query Nodes 
-Query nodes are responsible for 
-
-#### Deployment
-Query nodes can be deployed to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution. We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+Query nodes are responsible for storing and providing data for subgraphs. Query nodes can be deployed to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution.
 
 
 
-
+### Subgraphs
 
 # TODOs
 
