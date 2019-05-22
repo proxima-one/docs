@@ -17,11 +17,7 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 
 ## Our Product
 ### TODO Why do developers want to use this? What benefit is it to them? How do they use it?
-### TODO What is an example of how a developer would use this?
-
- 
 We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
-
 
 ### Features
 - Events, State
@@ -29,6 +25,17 @@ We provide default event mappings for every developer so there is no setup neede
 - Blockchain agnostic
 - Trustless data 
 - Performant queries
+
+### Example Use Case
+
+### TODO What is an example of how a developer would use this?
+#### Goal
+Developer wants to query the blockchain
+
+#### Solution
+
+#### Benefits
+- Faster queries
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
@@ -46,11 +53,7 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 
 ### Subgraphs
-
-# TODOs
-
-
-- ## Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+## TODOs Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
 
 
 
@@ -77,7 +80,7 @@ Along with adding features like range queries and load-balancing, Ruffle provide
 ## Auditing 
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
 
-## TODO diagram for audit
+## TODOs diagram for audit
 
 Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits like:
 
@@ -91,7 +94,7 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## Considerations
+## TODOs: Considerations
 
 There are a variety of different security considerations that must be addressed within Proxima. 
 
