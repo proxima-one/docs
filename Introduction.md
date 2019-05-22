@@ -17,6 +17,8 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 
 ## Our Product
 ### TODO Why do developers want to use this? What benefit is it to them? How do they use it?
+### TODO What is an example of how a developer would use this?
+
  
 We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
 
