@@ -30,12 +30,28 @@ Proxima provides default mapping of events and stores them within an authenticat
 
 ![](overall-architecture.png)
 
-### Deployment
-Deploy to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution. We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+### Index Nodes 
+The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs with bootstraps, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos. 
+
+Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes.
+
+### Query Nodes 
+Query nodes are responsible for 
+
+#### Deployment
+Query nodes can be deployed to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution. We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+
+
+
+
 
 # TODOs
-- ## Explain how Index Nodes and Query Nodes work + Diagram
+
+
 - ## Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+
+
+
 
 ## Queries
 Queries in Proxima, are given responses that are broken into entities. Each entity represents an individual data record that is being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
