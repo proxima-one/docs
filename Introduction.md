@@ -134,5 +134,6 @@ This can be done in the same way.
 
 - ### Ordering of updates and synchronization for the data structure
 
+
 - ### Proof-of-completeness for Range queries and filters
 
