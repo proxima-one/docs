@@ -149,7 +149,7 @@ Audits like these can be called within a query to guarantee that the information
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
 ## Considerations and Questions
-There are a variety of different security considerations that must be addressed within Proxima. 
+*There are a variety of different security considerations that must be addressed within Proxima.*
 
 #### Can audits or queries be fooled? 
  Audits cannot be fooled, but it is possible to provide data structures that are manipulated. An example of this would be changing the values of in a transaction, but keeping the id and signature. This is easily fixed, by providin a verification function for entities to ensure that the data is consistent and correct. For the transaction example, the verification function would ensure that the signature and the hash are correct in the transaction. 
@@ -157,10 +157,11 @@ There are a variety of different security considerations that must be addressed 
 #### How are the Merkle roots of the subgraphs anchored? Do they need to be anchored to some chain? 
 Anchoring of data structures 
 
+#### Is it possible to send bad data, stale data, or validate from an incorrect Merkle root? 
+The data is based on an audit ... 
+
 #### What occurs in the instance of a blockchain fork/data?
 When a blockchain is forked, the blocks that are associated with the fork are no longer a valid part of the chain. Since these blocks are no longer able to be tied to the block head, all information that relies on them for verification will no longer be correct. Due to the inability to audit this information by the subgraphs and the queries, the information will no longer be presented in queries. 
-
-#### Is it possible to send bad data, stale data, or validate from the incorrect Merkle root? 
 
 #### Do subgraphs verify data and audit data before they push the data into the database?
 Yes, it is necessary for a subgraph to verify 
@@ -168,7 +169,6 @@ Yes, it is necessary for a subgraph to verify
 
 #### How are these subgraphs given data? Does the order of information matter? 
 Ordering of updates and synchronization for the data structure
-
 
  
  #### How expensive are audits?
