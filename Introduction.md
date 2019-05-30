@@ -172,8 +172,17 @@ Ordering of updates and synchronization for the data structure
 
  
  #### How expensive are audits?
-Audits require an extra "query", this does mean that they *can* be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs are ...  
+Audits require an extra "query", this does mean that they *can* be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs represent an authenticated database and each query is validated from the same Merkle root, Proxima Query Nodes cannot give multiple different data for the same query. This means that Proxima Nodes will have to give the same incorrect query for each node if it cheats or acts maliciously. It also means that once a query has been auditted it adds security for every query that uses the same node (ensuring that the Merkle root is correct). The greater the volume of queries that are going to a subgraph, the lower amount of audits need to be done. In the end, for datasets that are used often will become faster and more secure.   
 
 #### How are range queries, filters, and other database operations proven through the ProximaDB?
-At this point, the ProximaDB supplies a Proof-of-completeness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that all the data... 
+At this point, the ProximaDB supplies a Proof-of-completeness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that the data given in a query is all of the data that matches a filter or range. 
+
+This problem incorporates two subsets: 
+
+- Range Queries
+Ranges can be proven to be complete by looking at the ends of a sorted Merkle Trie, and building a partial Merkle Trie from it. This shows that there is no element outside of the desired range, and allows the querier to prove that every element within the query can build the partial tree. This topic has been breached in the Google [Sparse Merkle Trie](https://github.com/google/trillian), and [github discussions](https://gist.github.com/chris-belcher/eb9abe417d74a7b5f20aabe6bff10de0). 
+
+- Filter Queries
+Filters where multiple requirements can be met, 
+
 
