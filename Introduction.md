@@ -58,15 +58,13 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 ### Subgraphs
 
-subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+Subgraphs represent a method for ...  can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
 
 ```
 subgraph
   entities:
     - ...
   schema: 
-    - ...
-  audits:
     - ...
   mappings:
     - ...
@@ -75,21 +73,37 @@ subgraph
 ```
 
 #### Entities
+Entities are formulations of objects in Proxima. They can represent Users, Accounts, Items, Orders, etc. The entity will define the values, the "audits" associated with the values, and how to index/write the objects to the authenticated database.
 
-#### Schema
+##### Schema
+The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
 
-#### Audits
+##### Audits
+An entity will have data from other sources, it is necessary to be able to audit this data. Audits are defined later in this paper, but the short story is that the use 
 
 #### Datasources
- 
-##### External data sources
+Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
 
-  
+##### Subgraphs
+Subgraphs can be used as a datasource for other subgraphs. These subgraphs are referenced and used through the Proxima Index Node. This method makes it easy to define and use subgraphs.
+
 ```  
   datasource:
-      type: 
-      name: 
-      ingestor:
+      type: Subgraph
+       id: Ethereum-Subgraph
+      name: Ethereum
+```
+
+##### External data sources
+
+External datasources are more difficult to build, and must contain pre-built entities. By doing this it is possible to use the external datasource in the same manner that a subgraph can be used. 
+
+```  
+  datasource:
+      type: External
+      name: Ethereum
+      ingestor: ...
+      entities: ...
       mapping:
       - handlers
       - abi/schema
@@ -117,7 +131,7 @@ Along with adding features like range queries and load-balancing, Ruffle provide
 ## Auditing 
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
 
-## TODOs diagram for audit
+### TODOs diagram for audit
 
 Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits like:
 
