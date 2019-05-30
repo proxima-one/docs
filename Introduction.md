@@ -80,7 +80,9 @@ Entities are formulations of objects in Proxima. They can represent Users, Accou
 
   ##### Audits
   An entity will have data from other sources, it is necessary to be able to audit this data. Entities have specific    
-  subroutines that take run queries known as "audits", to ensure the validity of their data.
+  subroutines that take run queries known as "audits", to ensure the validity of the data given.
+  
+  
 
 #### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
@@ -122,9 +124,8 @@ The data contained within each identity is associated with the schema of the ent
 #### Proof
 This is the *proof-of-membership* within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
 
-## TODO Edit to include info about audits from entity
-#### Audit
-The audit provides a *Proof-of-Correctness* for the entity that is being queried. This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
+#### Audits
+The audit provides a *Proof-of-Correctness* for the entity that is being queried, and is sourced by the entity itself. This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
 
 ## Authenticated Datastore
 Proxima uses ProximaDB, a bolt-on component of the powerful Urkel NoSQL database, that implements a Flat-File Merkle Trie (FFMT). We utilize the Flat-File Merkle Trie, like see in Urkel, because of the query speed (>1 ms), the reduced size of the proofs (>1kb), as well as the low storage footprint. FFMTs are especially useful in this implementation because they map from the internal nodes of the trie directly to the location of the data that they are referencing. For more information on this check out the [Handshake paper](https://handshake.org/files/handshake.txt).
