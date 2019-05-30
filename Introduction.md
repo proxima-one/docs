@@ -175,7 +175,7 @@ Ordering of updates and synchronization for the data structure
 Audits require an extra "query", this does mean that they *can* be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs represent an authenticated database and each query is validated from the same Merkle root, Proxima Query Nodes cannot give multiple different data for the same query. This means that Proxima Nodes will have to give the same incorrect query for each node if it cheats or acts maliciously. It also means that once a query has been auditted it adds security for every query that uses the same node (ensuring that the Merkle root is correct). The greater the volume of queries that are going to a subgraph, the lower amount of audits need to be done. In the end, for datasets that are used often will become faster and more secure.   
 
 #### How are range queries, filters, and other database operations proven through the ProximaDB?
-At this point, the ProximaDB supplies a Proof-of-completeness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that the data given in a query is all of the data that matches a filter or range. 
+At this point, the ProximaDB supplies a Proof-of-soundness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that the data given in a query is all of the data that matches a filter or range. 
 
 This problem incorporates two subsets: 
 
@@ -185,6 +185,6 @@ Ranges can be proven to be complete by looking at the ends of a sorted Merkle Tr
 - Filter Queries
 Filters where multiple requirements can be met, can be done by indexing an entity according to multiple constraints, submitting range queries to these different indexes and then doing a union or intersection based on the results of these queries. 
 
-One difficulty of this approach is the difficulty of combining multiple range queries at the same time. The naive approach would be to include every element within the ... 
+One difficulty of this approach is the difficulty of combining multiple range queries at the same time. There have been several approaches that utilize accumulators and aggregate functions to provide [efficient nonmembership proofs] (https://www.cs.purdue.edu/homes/ninghui/papers/accumulator_acns07.pdf). The naive approach would be to include every element in the ranges with their proofs for membership/nonmembership. The proof would include the subset of all the entities that matched the requirements, and a set of those that do not. Proofs could be derived by checking membership/nonmembership for all filters. 
 
-
+A potential alternative would be to encrypt the data via a homomorphic encryption of the [entire entity schema](https://www.math.u-bordeaux.fr/~gcastagn/publi/isit_homo.pdf), and to perform the boolean operations on the encrypted schema and filter. In cases where privacy is neceesary, this is a powerful alternative.
