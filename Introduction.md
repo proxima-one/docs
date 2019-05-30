@@ -27,8 +27,8 @@ We provide default event mappings for every developer so there is no setup neede
 
 ### Example Use Case:
 
-#### TODO Goal
-Developer wants to query the blockchain
+#### Goal
+A developer wants to query the blockchain, to get data from a specific DApp. This DApp utilizes multiple smart contracts, and needs the 
 
 #### TODO Problem
 The current method of 
@@ -37,12 +37,12 @@ The current method of
 #### TODO Solution
 The developer can now 
 
-#### TODO Outcome
-- #### Faster queries
-- #### Lower storage footprint
-- #### Trustless queries
-- #### Greater Scalability 
-- #### Easier interface
+#### Outcome
+- ##### Faster queries
+- ##### Lower storage footprint
+- ##### Trustless queries
+- ##### Greater Scalability 
+- ##### Easier interface
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
@@ -59,7 +59,8 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 ### Subgraphs
 
-### TODOs Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+### TODOs Explain how 
+
 
 ```
 subgraph
@@ -67,11 +68,13 @@ subgraph
     - ...
   schema: 
     - ...
-  audits:
+  audit:
     - ...
-  datasources: ...
+  mappings:
+    - functions
+  datasources:
     datasource:
-      type:
+      type: 
       verification:
       audits:
       ingestor:
@@ -80,9 +83,10 @@ subgraph
       - abi/schema
 ```
 
-#### Datasources
-- ##### Subgraph
-- ##### External data
+subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+- #### Datasources
+  - ##### Subgraph
+  - ##### External data
 
 
 ## Queries
