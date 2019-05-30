@@ -115,9 +115,34 @@ Entities are formulations of objects in Proxima. They can represent Users, Accou
    ```
   
    #### Audits
+   The auditting process would include a query and a validation function. For the transaction it would query the blockHash, 
+   then it would perform the validation function that checks that the transaction is in Transaction Trie of the selected 
+   Block. 
+  
+  ```javascript
+  function AuditTransaction(Transaction) {
+    Block = Query(Transaction)
+    return Block AND Validate(Transaction, Block)
+  }
+  ```
+  
+  
+  ##### Query 
+   ```javascript
+   function Query(Transaction) {
+      Block, Proof = get('subgraph blocks', Transaction.BlockHash)
+      if Proof.verify:
+        return Block
+      return null
+   }
+   ```
    
-   
-   
+  ##### Validation
+   ```javascript
+   function Validate(Transaction, Block) {
+    return  
+   }
+   ``` 
 
 ### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
