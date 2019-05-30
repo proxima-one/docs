@@ -6,9 +6,9 @@ How do you know that you are getting accurate and sound data from the correct bl
 
 ### Examples
 
-- Did my user pay? What are the interest rates? 
-- How many users are there? What do my orders look like? 
-- What is my account balance? What transactions have I been a part of?
+- *Did my user pay? What are the interest rates?* 
+- *How many users are there? What do my orders look like?* 
+- *What is my account balance? What transactions have I been a part of?*
 
 When dealing with data security it is not enough to “trust”. Ora protocol provides the convenience, feature set, and speed of centralized providers AND maintains the audibility and trustlessness of the blockchain.
 
@@ -20,11 +20,11 @@ Decentralize the ability to provide data, interact with data to empower DApp dev
 We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
 
 ### Features
-- Events, State
-- Filtering* (soundness, not completeness), Range* (soundness, not completeness)
-- Blockchain agnostic
-- Trustless data 
-- Performant queries
+- *Events, State*
+- *Filtering (soundness, not completeness), Range* (soundness, not completeness)*
+- *Blockchain agnostic*
+- *Trustless data*
+- *Performant queries*
 
 ### Example Use Case
 
@@ -106,9 +106,9 @@ Our system maintains the same auditing structure of blockchains, but it stores b
 
 ### Example Audits
 
-- Is this block a part of the Ethereum block? 
-- Is this transaction really embedded in this block?
-- Is this state located in the state trie for the current block?
+- *Is this block a part of the Ethereum block?*
+- *Is this transaction really embedded in this block?*
+- *Is this state located in the state trie for the current block?*
 
 Audits like these can be called within a query to guarantee that the information provided is correct. Audits can also be chained together in a recursive manner, this is known as an audit trail. As our product progresses, audits can be updated and added to improve the security and rigor of the audit itself. 
 
