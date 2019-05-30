@@ -38,12 +38,11 @@ The current method of
 The developer can now 
 
 #### TODO Outcome
-The res
-- Faster queries
-- Lower storage footprint
-- Trustless queries
-- Greater Scalability 
-- Easier interface
+- #### Faster queries
+- #### Lower storage footprint
+- #### Trustless queries
+- #### Greater Scalability 
+- #### Easier interface
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
@@ -53,7 +52,7 @@ Proxima provides default mapping of events and stores them within an authenticat
 ### Index Nodes 
 The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs with bootstraps, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos. 
 
-Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes.
+*Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes.*
 
 ### Query Nodes 
 Query nodes are responsible for storing and providing data for subgraphs. Query nodes can be deployed to our hosting DNS service through a manifest that defines data sources, contracts, and any extra mappings. This manifest is deployed to the IPNS, to enable deployment to the mesh as well as deployment to our own hosting solution.
@@ -82,8 +81,8 @@ subgraph
 ```
 
 #### Datasources
-- Subgraph
-- External data
+- ##### Subgraph
+- ##### External data
 
 
 ## Queries
