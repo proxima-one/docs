@@ -1,4 +1,4 @@
-# Introducing Proxima
+# Proxima
 
 ## What do we do?
 Blockchain data is tough to truly authenticate. 
@@ -16,7 +16,6 @@ When dealing with data security it is not enough to “trust”. Ora protocol pr
 Decentralize the ability to provide data, interact with data to empower DApp developers, provide tools that speed up the creation of DApps, and drive adoption of blockchain technology. Our solution is general enough to enable our decentralized data providers to provide data for DApps for several blockchains / smart contract platforms.
 
 ## Our Product
-### TODO Why do developers want to use this? What benefit is it to them? How do they use it?
 We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
 
 ### Features
@@ -26,16 +25,25 @@ We provide default event mappings for every developer so there is no setup neede
 - *Trustless data*
 - *Performant queries*
 
-### Example Use Case
+### Example Use Case:
 
-### TODO What is an example of how a developer would use this?
-#### Goal
+#### TODO Goal
 Developer wants to query the blockchain
 
-#### Solution
+#### TODO Problem
+The current method of 
 
-#### Benefits
+
+#### TODO Solution
+The developer can now 
+
+#### TODO Outcome
+The res
 - Faster queries
+- Lower storage footprint
+- Trustless queries
+- Greater Scalability 
+- Easier interface
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
@@ -52,7 +60,7 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 ### Subgraphs
 
-## TODOs Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+### TODOs Explain how subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
 
 ```
 subgraph
@@ -114,26 +122,26 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## TODO Considerations
+## Considerations
 
 There are a variety of different security considerations that must be addressed within Proxima. 
 
-- ### Verification functions and libraries must be consistent
+- #### Verification functions and libraries must be consistent
 This can be done in the same way.
 
-- ### Audits can be fooled if they simply check equality
+- #### Audits can be fooled if they simply check equality
  Data needs to be verified
 
-- ### Cost of complete verification from clients
-
-- ### Anchoring of data structures
-
-- ### What occurs in the instance of a fork?
-
-- ### Sending bad data, validating from the incorrect Merkle root, or serving stale data from correct root
-
-- ### Ordering of updates and synchronization for the data structure
+- #### Cost of complete verification from clients
 
 
-- ### Proof-of-completeness for Range queries and filters
+- #### Anchoring of data structures
+
+- #### What occurs in the instance of a fork?
+
+- #### Sending bad data, validating from the incorrect Merkle root, or serving stale data from correct root
+
+- #### Ordering of updates and synchronization for the data structure
+
+- #### Proof-of-completeness for Range queries and filters
 
