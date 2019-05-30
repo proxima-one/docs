@@ -163,7 +163,9 @@ Subgraph roots can be "anchored" or snapshotted and then sent to a chain or immu
 The important consideration for this is that roots can be different, and posted for each query node. Since each subgraph can be auditted, it is possible to discern the malicious actor, without consensus, based on diffs on the merkle roots.
 
 #### Is it possible to send bad data, stale data, or validate from an incorrect Merkle root? 
-The data is based on an audit ... 
+The data is based on the merkle root of the subgraph. If the root of the subgraph cannot be tied back to the last anchor, there will be an issue with the audits. This means that there is an upper limit on how "stale" the data can be, (the max time between subgraph snapshots). 
+
+The anchoring aspect also means that subgraphs will not be able to readily use different Merkle roots, and that this data must be validated from the Merkle root presented by the subgraph in the anchor (or a derivate Merkle root from it). 
 
 #### What occurs in the instance of a blockchain fork/data?
 When a blockchain is forked, the blocks that are associated with the fork are no longer a valid part of the chain. Since these blocks are no longer able to be tied to the block head, all information that relies on them for verification will no longer be correct. Due to the inability to audit this information by the subgraphs and the queries, the information will no longer be presented in queries. 
