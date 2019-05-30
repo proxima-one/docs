@@ -38,11 +38,11 @@ The current method of
 The developer can now 
 
 #### Outcome
-- ##### Faster queries
-- ##### Lower storage footprint
-- ##### Trustless queries
-- ##### Greater Scalability 
-- ##### Easier interface
+##### Faster queries
+##### Lower storage footprint
+##### Trustless queries
+##### Greater Scalability 
+##### Easier interface
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
@@ -81,6 +81,7 @@ subgraph
 
 #### Audits
 
+
 #### Datasources
  
 ##### External data sources
@@ -88,15 +89,13 @@ subgraph
   
 ```  
   datasource:
-      verification:
+      type: 
+      name: 
       ingestor:
       mapping:
       - handlers
       - abi/schema
 ```
-
-
-
 
 ## Queries
 Queries in Proxima, are given responses that are broken into entities. Each entity represents an individual data record that is being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
