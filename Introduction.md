@@ -72,22 +72,27 @@ subgraph
     -  ... 
 ```
 
-#### Entities
+### Entities
 Entities are formulations of objects in Proxima. They can represent Users, Accounts, Items, Orders, etc. The entity will define the values, the "audits" associated with the values, and how to index/write the objects to the authenticated database.
 
-  ##### Schema
+  #### Schema
   The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
 
-  ##### Audits
+  #### Audits
   An entity will have data from other sources, it is necessary to be able to audit this data. Entities have specific    
   subroutines that take run queries known as "audits", to ensure the validity of the data given.
   
+  #### Verification
+  
+  
+  #### Example: Transaction
+  
   
 
-#### Datasources
+### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
 
-##### Subgraphs
+#### Subgraphs
 Subgraphs can be used as a datasource for other subgraphs. These subgraphs are referenced and used through the Proxima Index Node. This method makes it easy to define and use subgraphs.
 
 ```  
@@ -97,7 +102,7 @@ Subgraphs can be used as a datasource for other subgraphs. These subgraphs are r
       name: Ethereum
 ```
 
-##### External data sources
+#### External data sources
 
 External datasources are more difficult to build, and must contain pre-built entities. By doing this it is possible to use the external datasource in the same manner that a subgraph can be used. 
 
