@@ -58,7 +58,7 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 ### Subgraphs
 
-Subgraphs represent a method for ...  can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
+Subgraphs represent a contained data set that can be queried, auditted, and reused within the Proxima network. The easiest analogy for subgraphs, is that they represent tables of data complete with schema, transformations, and queries.
 
 ```
 subgraph
@@ -75,11 +75,12 @@ subgraph
 #### Entities
 Entities are formulations of objects in Proxima. They can represent Users, Accounts, Items, Orders, etc. The entity will define the values, the "audits" associated with the values, and how to index/write the objects to the authenticated database.
 
-##### Schema
-The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
+  ##### Schema
+  The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
 
-##### Audits
-An entity will have data from other sources, it is necessary to be able to audit this data. Audits are defined later in this paper, but the short story is that the use 
+  ##### Audits
+  An entity will have data from other sources, it is necessary to be able to audit this data. Entities have specific    
+  subroutines that take run queries known as "audits", to ensure the validity of their data.
 
 #### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
@@ -120,6 +121,8 @@ Each *entity* within a query is composed of the following attributes:
 The data contained within each identity is associated with the schema of the entity itself. This is what the query is looking at.
 #### Proof
 This is the *proof-of-membership* within the Proxima Database. The Proof itself relies on the Merkle root of the database, and is authenticated with the hash of the value. 
+
+## TODO Edit to include info about audits from entity
 #### Audit
 The audit provides a *Proof-of-Correctness* for the entity that is being queried. This involves conducting a separate query query of data that is directly tied to the entity. For example, a transaction "audit" would return the block whose blockhash is referenced by the transaction, and a proof-of-membership for this block.
 
@@ -128,12 +131,12 @@ Proxima uses ProximaDB, a bolt-on component of the powerful Urkel NoSQL database
 
 Along with adding features like range queries and load-balancing, Ruffle provides the default authentication and performance seen in the Urkel database. Our data store provides Merkle proofs for data to ensure the authenticity and immutability of all data within it.
 
-## Auditing 
+
+## TODO Edit to include info about audits from entity
+## Audits
 The blocks of a blockchain are immutable, but blocks are only linked to their immediate neighbors, so the history of the blockchain can only be verified by downloading the entire chain. This means that it is only possible to audit data (e.g. transactions, state, and blocks) from a blockchain, by running a full node and synchronizing with every block in the blockchain’s history. 
 
-### TODOs diagram for audit
-
-Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits like:
+Our system maintains the same auditing structure of blockchains, but it stores blocks within an authenticated database, so it is possible to verify membership of blocks without downloading the entire history. This enables fast and efficient audits.
 
 ### Example Audits
 
@@ -145,26 +148,32 @@ Audits like these can be called within a query to guarantee that the information
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
 
-## Considerations
-
+## Considerations and Questions
 There are a variety of different security considerations that must be addressed within Proxima. 
 
-- #### Verification functions and libraries must be consistent
-This can be done in the same way.
+#### Can audits or queries be fooled? 
+ Audits cannot be fooled, but it is possible to provide data structures that are manipulated. An example of this would be changing the values of in a transaction, but keeping the id and signature. This is easily fixed, by providin a verification function for entities to ensure that the data is consistent and correct. For the transaction example, the verification function would ensure that the signature and the hash are correct in the transaction. 
 
-- #### Audits can be fooled if they simply check equality
- Data needs to be verified
+#### How are the Merkle roots of the subgraphs anchored? Do they need to be anchored to some chain? 
+Anchoring of data structures 
 
-- #### Cost of complete verification from clients
+#### What occurs in the instance of a blockchain fork/data?
+When a blockchain is forked, the blocks that are associated with the fork are no longer a valid part of the chain. Since these blocks are no longer able to be tied to the block head, all information that relies on them for verification will no longer be correct. Due to the inability to audit this information by the subgraphs and the queries, the information will no longer be presented in queries. 
+
+#### Is it possible to send bad data, stale data, or validate from the incorrect Merkle root? 
+
+#### Do subgraphs verify data and audit data before they push the data into the database?
+Yes, it is necessary for a subgraph to verify 
 
 
-- #### Anchoring of data structures
+#### How are these subgraphs given data? Does the order of information matter? 
+Ordering of updates and synchronization for the data structure
 
-- #### What occurs in the instance of a fork?
 
-- #### Sending bad data, validating from the incorrect Merkle root, or serving stale data from correct root
+ 
+ #### How expensive are audits?
+Audits require an extra "query", this does mean that they *can* be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs are ...  
 
-- #### Ordering of updates and synchronization for the data structure
-
-- #### Proof-of-completeness for Range queries and filters
+#### How are range queries, filters, and other database operations proven through the ProximaDB?
+At this point, the ProximaDB supplies a Proof-of-completeness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that all the data... 
 
