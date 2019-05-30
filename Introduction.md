@@ -151,11 +151,16 @@ Audits and audit trails would take a lot of time if they are used for every quer
 ## Considerations and Questions
 *There are a variety of different security considerations that must be addressed within Proxima.*
 
+#### Why use a trie? 
+Tries are used because they represent a data structure that is sorted and deterministic. This means that synchorinzations can occur in a distirbuted fashion (order of updates will not matter), and range queries can be done.
+
 #### Can audits or queries be fooled? 
  Audits cannot be fooled, but it is possible to provide data structures that are manipulated. An example of this would be changing the values of in a transaction, but keeping the id and signature. This is easily fixed, by providin a verification function for entities to ensure that the data is consistent and correct. For the transaction example, the verification function would ensure that the signature and the hash are correct in the transaction. 
 
 #### How are the Merkle roots of the subgraphs anchored? Do they need to be anchored to some chain? 
-Anchoring of data structures 
+Subgraph roots can be "anchored" or snapshotted and then sent to a chain or immutable data source. While subgraphs do not need consensus for queries and updates, it does provide benefit for efficiency to have an immutable source of truth for the root of the subgraph. By anchoring the database of a subgraph, it is possible to lower the number of audits needed, and to reduce the number of checks. 
+
+The important consideration for this is that roots can be different, and posted for each query node. Since each subgraph can be auditted, it is possible to discern the malicious actor, without consensus, based on diffs on the merkle roots.
 
 #### Is it possible to send bad data, stale data, or validate from an incorrect Merkle root? 
 The data is based on an audit ... 
@@ -164,12 +169,10 @@ The data is based on an audit ...
 When a blockchain is forked, the blocks that are associated with the fork are no longer a valid part of the chain. Since these blocks are no longer able to be tied to the block head, all information that relies on them for verification will no longer be correct. Due to the inability to audit this information by the subgraphs and the queries, the information will no longer be presented in queries. 
 
 #### Do subgraphs verify data and audit data before they push the data into the database?
-Yes, it is necessary for a subgraph to verify 
+Yes, it is necessary for a subgraph to verify data sources and data before they push their data into the file. Each entity should come with a verification mechanism, for a block in a blockchain it would be to take the hash of the block. Before a node adds any piece of data to their database, it is necessary (built-in) for them to verify this data first. Along with verification, it is also necessary for these nodes to conduct the first audit on the entity before adding it to the database.
 
-
-#### How are these subgraphs given data? Does the order of information matter? 
-Ordering of updates and synchronization for the data structure
-
+#### How are these subgraphs given data?
+As stated previously, subgraphs get information from datasources. These datasources can be subgraphs, or external data sources. In the case of external data sources, subgraphs need to have access to the api for the data source, or they need to be able to synchronize/get updates from subgraphs that have access to these data sources.
  
  #### How expensive are audits?
 Audits require an extra "query", this does mean that they *can* be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs represent an authenticated database and each query is validated from the same Merkle root, Proxima Query Nodes cannot give multiple different data for the same query. This means that Proxima Nodes will have to give the same incorrect query for each node if it cheats or acts maliciously. It also means that once a query has been auditted it adds security for every query that uses the same node (ensuring that the Merkle root is correct). The greater the volume of queries that are going to a subgraph, the lower amount of audits need to be done. In the end, for datasets that are used often will become faster and more secure.   
