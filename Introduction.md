@@ -108,7 +108,7 @@ Entities are formulations of objects in Proxima. They can represent Users, Accou
    #### Verification
    The verification in this case would be to ensure that the signed Transaction was hashed to the correct Hash. Put simply it   would look like: 
    
-   ```
+   ```javascript
    function verification(Transaction, transactionHash) {
       return keccak256(Transaction) == transactionHash
    }
@@ -140,7 +140,7 @@ Entities are formulations of objects in Proxima. They can represent Users, Accou
   ##### Validation
    ```javascript
    function Validate(Transaction, Block) {
-    return  
+    return (Transaction.Hash in Block.TransactionTrie)
    }
    ``` 
 
