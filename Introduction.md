@@ -78,16 +78,24 @@ Entities are formulations of objects in Proxima. They can represent Users, Accou
   #### Schema
   The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
 
+  #### Verification
+  Each 
+  
   #### Audits
   An entity will have data from other sources, it is necessary to be able to audit this data. Entities have specific    
   subroutines that take run queries known as "audits", to ensure the validity of the data given.
   
-  #### Verification
-  
+
   
   #### Example: Transaction
   
   
+   #### Schema
+  
+   #### Verification
+   Each 
+  
+   #### Audits
 
 ### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
