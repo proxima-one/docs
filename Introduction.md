@@ -76,35 +76,48 @@ subgraph
 Entities are formulations of objects in Proxima. They can represent Users, Accounts, Items, Orders, etc. The entity will define the values, the "audits" associated with the values, and how to index/write the objects to the authenticated database.
 
   #### Schema
-  The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. 
+  The schema exists as a part of the entity, it will enable queries, and show the data that is held within the entity. This 
+  schema will eventually be able to contain other entities. 
 
   #### Verification
-  Each 
+  Each entity has a function(s) that will verify the validity of the data they hold. An example of this would be a block    
+  entity have a verification function that ensures the blockhead hashes to the blockhash. 
   
   #### Audits
   An entity will have data from other sources, it is necessary to be able to audit this data. Entities have specific    
-  subroutines that take run queries known as "audits", to ensure the validity of the data given.
-  
-
+  subroutines that take run queries on subgraphs. These queries are known as "audits", and they will ensure the validity of 
+  the data given. An example of such an audit would be a query for a Transaction that checks if the block, associated with the 
+  blockHash, exists.
   
   #### Example: Transaction
-  
+  An example entity to use is a transaction, (a UTXO in this case). Look at how the schema defines the data, the 
   
    #### Schema
    
     ```
-    entity:
-      name: ...
-      ...
-      ...
-      ...
-      ...
+    Transaction {
+        transactionHash: Uint256
+        from: Address
+        to: Address
+        value: Uint256
+        signature: bytes
+        blockHash: Uint256
+    }
     ```
   
    #### Verification
-   Each 
+   The verification in this case would be to ensure that the signed Transaction was hashed to the correct Hash. Put simply it   would look like: 
+   
+   ```
+   function verification(Transaction, transactionHash) {
+      return keccak256(Transaction) == transactionHash
+   }
+   ```
   
    #### Audits
+   
+   
+   
 
 ### Datasources
 Subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps), these are defined as datasources.
