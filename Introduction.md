@@ -59,8 +59,7 @@ Query nodes are responsible for storing and providing data for subgraphs. Query 
 
 ### Subgraphs
 
-### TODOs Explain how 
-
+subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
 
 ```
 subgraph
@@ -68,25 +67,35 @@ subgraph
     - ...
   schema: 
     - ...
-  audit:
+  audits:
     - ...
   mappings:
-    - functions
+    - ...
   datasources:
-    datasource:
-      type: 
+    -  ... 
+```
+
+#### Entities
+
+#### Schema
+
+#### Audits
+
+#### Datasources
+ 
+##### External data sources
+
+  
+```  
+  datasource:
       verification:
-      audits:
       ingestor:
       mapping:
       - handlers
       - abi/schema
 ```
 
-subgraphs can be used by other subgraphs (e.g. Ethereum subgraph being used by DApps)
-- #### Datasources
-  - ##### Subgraph
-  - ##### External data
+
 
 
 ## Queries
