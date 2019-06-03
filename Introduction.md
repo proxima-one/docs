@@ -42,6 +42,7 @@ The developer can make a Proxima data node that incorporates subgraphs for each 
 - Trustless queries
 - Greater Scalability 
 - Easier interface
+- Lower costs
 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
