@@ -27,8 +27,10 @@ We provide default event mappings for every developer so there is no setup neede
 - **Lower cost** 
 
 ## Stakeholders
+*There exist three major stakeholders in the Proxima ecosystem. 
 
 - **Blockchains**
+
 
 - **Decentralized Applications** 
 
