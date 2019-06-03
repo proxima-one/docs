@@ -10,7 +10,7 @@ How do you know that you are getting accurate and sound data from the correct bl
 - *How many users are there? What do my orders look like?* 
 - *What is my account balance? What transactions have I been a part of?*
 
-When dealing with data security it is not enough to “trust”. Ora protocol provides the convenience, feature set, and speed of centralized providers AND maintains the audibility and trustlessness of the blockchain.
+When dealing with data security it is not enough to “trust”. Proxima provides the convenience, feature set, and speed of centralized providers AND maintains the audibility and trustlessness of the blockchain.
 
 ## Our goal 
 Decentralize the ability to **provide data, interact with data** to **empower DApp developers**, provide tools that **speed up the creation of DApps**, and **drive adoption of blockchain technology**. Our solution is general enough to **enable our decentralized data providers** to provide data for DApps **for several blockchains / smart contract platforms.**
@@ -45,7 +45,7 @@ The developer can make a Proxima data node that incorporates subgraphs for each 
 - Lower costs
 
 ## How do we do it?
-Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
+Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Proxima leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
 
 ![](overall-architecture.png)
 
