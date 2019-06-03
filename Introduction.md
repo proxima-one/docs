@@ -16,21 +16,23 @@ When dealing with data security it is not enough to “trust”. Proxima provide
 Decentralize the ability to **provide data, interact with data** to **empower DApp developers**, provide tools that **speed up the creation of DApps**, and **drive adoption of blockchain technology**. Our solution is general enough to **enable our decentralized data providers** to provide data for DApps **for several blockchains / smart contract platforms**, while basing our **security on the consensus of the blockchain that the data is coming from**.
 
 ## Our Product
-We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address. Moreover, our methodology does not employ any consensus method for queries or writes because it ties the data in each with the blockchain itself.
 
 ## Benefits 
 
 - **Security**
+Instead of relying on the consensus or trust of another data provider, the security of the data on Proxima is gauranteed by the blockchain that the developer uses.
 
 - **Lower latency** 
+Since queries do not need ..
 
 - **Lower cost** 
+Instead of needing large clusters to run consensus on individual queries.
 
 ## Stakeholders
-*There exist three major stakeholders in the Proxima ecosystem. 
+*There exist three major stakeholders in the Proxima ecosystem.* 
 
 - **Blockchains**
-
 
 - **Decentralized Applications** 
 
@@ -43,7 +45,6 @@ We provide default event mappings for every developer so there is no setup neede
 - *Blockchain agnostic*
 - *Trustless data*
 - *Performant queries*
-
 
 ### Example Use Case
 
