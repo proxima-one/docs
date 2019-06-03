@@ -13,7 +13,7 @@ How do you know that you are getting accurate and sound data from the correct bl
 When dealing with data security it is not enough to “trust”. Ora protocol provides the convenience, feature set, and speed of centralized providers AND maintains the audibility and trustlessness of the blockchain.
 
 ## Our goal 
-Decentralize the ability to provide data, interact with data to empower DApp developers, provide tools that speed up the creation of DApps, and drive adoption of blockchain technology. Our solution is general enough to enable our decentralized data providers to provide data for DApps for several blockchains / smart contract platforms.
+Decentralize the ability to **provide data, interact with data** to **empower DApp developers**, provide tools that **speed up the creation of DApps**, and **drive adoption of blockchain technology**. Our solution is general enough to **enable our decentralized data providers** to provide data for DApps **for several blockchains / smart contract platforms.**
 
 ## Our Product
 We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
