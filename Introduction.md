@@ -21,13 +21,13 @@ We provide default event mappings for every developer so there is no setup neede
 ## Benefits 
 
 - **Security**
-Instead of relying on the consensus or trust of another data provider, the security of the data on Proxima is gauranteed by the blockchain that the developer uses.
+Instead of relying on the consensus or trust of another data provider, the security of the data on Proxima is gauranteed by the blockchain that the developer uses. 
 
 - **Lower latency** 
-Since queries do not need ..
+Queries in blockchains 
 
 - **Lower cost** 
-Instead of needing large clusters to run consensus on individual queries.
+Traditional approaches for data delivery, require large clusters of nodes to run consensus on individual queries. This is ineffective, and lowers the security. Through Proxima, each query does not need trust because it can be audited. This lowers the cost to serve a query to match traditional standards. Furthermore, it does not need trust so it opens up the ability to serve data which can further drop the price. 
 
 ## Stakeholders
 *There exist three major stakeholders in the Proxima ecosystem.* 
