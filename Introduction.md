@@ -74,7 +74,7 @@ Proxima provides default mapping of events and stores them within an authenticat
 ![](assets/overall-architecture.png)
 
 ### Index Nodes 
-The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs with bootstraps, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos. 
+The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos. 
 
 *Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes.*
 
