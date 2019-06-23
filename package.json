@@ -1,0 +1,10 @@
+{
+  "name": "proxima-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/proxima-one/docs.git",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.0.2"
+  }
+}
