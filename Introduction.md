@@ -11,15 +11,37 @@ How do you know that you are getting accurate and sound data from the correct bl
 - _How many users are there? What do my orders look like?_
 - _What is my account balance? What transactions have I been a part of?_
 
-When dealing with data security it is not enough to “trust”. Ora protocol provides the convenience, feature set, and speed of centralized providers AND maintains the audibility and trustlessness of the blockchain.
+When dealing with data security it is not enough to “trust”. Proxima provides the convenience, feature set, and speed of centralized providers **AND** maintains the audibility and trustlessness of the blockchain.
 
 ## Our goal
-
-Decentralize the ability to provide data, interact with data to empower DApp developers, provide tools that speed up the creation of DApps, and drive adoption of blockchain technology. Our solution is general enough to enable our decentralized data providers to provide data for DApps for several blockchains / smart contract platforms.
+Decentralize the ability to **provide data, interact with data** to **empower DApp developers**, provide tools that **speed up the creation of DApps**, and **drive adoption of blockchain technology**. Our solution is general enough to **enable our decentralized data providers** to provide data for DApps **for several blockchains / smart contract platforms**, while basing our **security on the consensus of the blockchain that the data is coming from**.
 
 ## Our Product
+We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address. Moreover, our methodology does not employ any consensus method for queries or writes because it ties the data in each with the blockchain itself.
 
-We provide default event mappings for every developer so there is no setup needed aside from listing the contract ABI code, the data source, and the address.
+## Benefits
+
+- **Security**
+Instead of relying on the consensus or trust of another data provider, the security of the data on Proxima is gauranteed by the blockchain that the developer uses. This is done by creating a trail between every piece of data in Proxima, and the block that it originates from.
+
+- **Lower latency**
+Queries for data in Proxima need to have only one hop, this creates an experience that is similar to the traditional request-response method. Other such methods have consensus mechanisms for queries, which can lead to quadratic bounds with regard to the number of messages being passed.  
+
+- **Lower cost**
+Traditional approaches for data delivery, require large clusters of nodes to run consensus on individual queries. This is ineffective, and lowers the security. Through Proxima, each query does not need trust because it can be audited. This lowers the cost to serve a query to match traditional standards. Furthermore, it does not need trust so it opens up the ability to serve data which can further drop the price.
+
+## Stakeholders
+*There exist three major stakeholders in the Proxima ecosystem.*
+
+- **Blockchains**
+Blockchains suffer from two major issues adoption and data delivery. In order to be sustainable blockchains need to have a way to easily get data from the chain, and they need a highly secure, cost effective method to maintain this infrastructure indefinitely. Through Proxima, these blockchains do not need to compromise on any of these aspects.
+
+- **Decentralized Applications**
+Decentralized applications can use Proxima, as a method for maintaining an easy connection to the data that preserves security. Instead of building their own custom caching and data solutions, these applications can build ontop of a highly secure, blazing fast data provider.
+
+- **Users**
+Users receive faster performance and a more diverse experience. This can be seen with faster page load times, and a real-time experience.  
+
 
 ### Features
 
@@ -50,16 +72,15 @@ The developer can make a Proxima data node that incorporates subgraphs for each 
 - Trustless queries
 - Greater Scalability
 - Easier interface
+- Lower costs
 
 ## How do we do it?
+Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Proxima leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
 
-Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Ora leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
-
-![](overall-architecture.png)
+![](assets/overall-architecture_1.png)
 
 ### Index Nodes
-
-The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs with bootstraps, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos.
+The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos.
 
 _Note: the index nodes do not actually store any "subgraphs", they simply connect to subgraphs stored by the query nodes._
 
@@ -197,7 +218,7 @@ External datasources are more difficult to build, and must contain pre-built ent
 
 Queries in Proxima, are given responses that are broken into entities. Each entity represents an individual data record that is being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
 
-![](query.png)
+![](assets/query.png)
 
 Each _entity_ within a query is composed of the following attributes:
 
