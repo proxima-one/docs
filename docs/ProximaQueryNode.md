@@ -1,2 +1,2 @@
 
-# Proxima Query Node 
+# Proxima Query Node
