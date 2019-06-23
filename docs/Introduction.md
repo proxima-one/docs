@@ -3,7 +3,7 @@
 ## What do we do?
 
 Blockchain data is tough to truly authenticate.
-How do you know that you are getting accurate and sound data from the correct blockchain? You have no idea if the data coming from your account balance, query, or Decentralized application events are accurate and timely. The result can lead to major issues with visibility, analytics, and finances within your business. It can mean the difference between (a popping phrase for success here) or failure.
+How do you know that you are getting accurate and sound data from the correct blockchain? You have no idea if the data coming from your account balance, query, or Decentralized application events are accurate and timely. The result can lead to major issues with visibility, analytics, and finances within your business. It can mean the difference between success or failure.
 
 ### Examples
 
@@ -77,7 +77,7 @@ The developer can make a Proxima data node that incorporates subgraphs for each 
 ## How do we do it?
 Proxima provides default mapping of events and stores them within an authenticated data store, giving developers the ability to query this through a graphQL interface. Queries are done through a specialized node that uses an authenticated data store to provide a Merkle-proof for the query. To ensure the security of the data, Proxima leaves an auditable trail for DApp developers to trace the path of their data to its source. We cannot change the authenticated data structure, so security does not have to be re-tried by each new user.
 
-![](assets/overall-architecture_1.png)
+![](./assets/overall-architecture_1.png)
 
 ### Index Nodes
 The index node is responsible for connecting the queries to the correct "subgraph". They will maintain a smart contract index of subgraphs, and eventually be responsible for dealing with payments and subscriptions. The index of subgraphs will be represented as a smart contract on Ethereum through the testnet phase. Eventually the index will be migrated to a higher throughput chain, like the tendermint sidechain on Cosmos.
@@ -218,7 +218,7 @@ External datasources are more difficult to build, and must contain pre-built ent
 
 Queries in Proxima, are given responses that are broken into entities. Each entity represents an individual data record that is being requested in the query itself. Since they are designed to be verifiable, they have components for proofs audits.
 
-![](assets/query.png)
+![](./assets/query.png)
 
 Each _entity_ within a query is composed of the following attributes:
 
@@ -255,59 +255,3 @@ Our system maintains the same auditing structure of blockchains, but it stores b
 Audits like these can be called within a query to guarantee that the information provided is correct. Audits can also be chained together in a recursive manner, this is known as an audit trail. As our product progresses, audits can be updated and added to improve the security and rigor of the audit itself.
 
 Audits and audit trails would take a lot of time if they are used for every query. Since the database is authenticated, probabilistic audits can be used by developers in instances where there is a high amount of overlap between queries. This lowers the number of audits needed to be completed for highly used sets while maintaining developer security guarantees.
-
-## Considerations and Questions
-
-_There are a variety of different security considerations that must be addressed within Proxima._
-
-#### Why use a trie?
-
-Tries are used because they represent a data structure that is sorted and deterministic. This means that synchorinzations can occur in a distirbuted fashion (order of updates will not matter), and range queries can be done.
-
-#### Can audits or queries be fooled?
-
-Audits cannot be fooled, but it is possible to provide data structures that are manipulated. An example of this would be changing the values of in a transaction, but keeping the id and signature. This is easily fixed, by providin a verification function for entities to ensure that the data is consistent and correct. For the transaction example, the verification function would ensure that the signature and the hash are correct in the transaction.
-
-#### How are the Merkle roots of the subgraphs anchored? Do they need to be anchored to some chain?
-
-Subgraph roots can be "anchored" or snapshotted and then sent to a chain or immutable data source. While subgraphs do not need consensus for queries and updates, it does provide benefit for efficiency to have an immutable source of truth for the root of the subgraph. By anchoring the database of a subgraph, it is possible to lower the number of audits needed, and to reduce the number of checks.
-
-The important consideration for this is that roots can be different, and posted for each query node. Since each subgraph can be auditted, it is possible to discern the malicious actor, without consensus, based on diffs on the merkle roots.
-
-#### Is it possible to send bad data, stale data, or validate from an incorrect Merkle root?
-
-The data is based on the merkle root of the subgraph. If the root of the subgraph cannot be tied back to the last anchor, there will be an issue with the audits. This means that there is an upper limit on how "stale" the data can be, (the max time between subgraph snapshots).
-
-The anchoring aspect also means that subgraphs will not be able to readily use different Merkle roots, and that this data must be validated from the Merkle root presented by the subgraph in the anchor (or a derivate Merkle root from it).
-
-#### What occurs in the instance of a blockchain fork/data?
-
-When a blockchain is forked, the blocks that are associated with the fork are no longer a valid part of the chain. Since these blocks are no longer able to be tied to the block head, all information that relies on them for verification will no longer be correct. Due to the inability to audit this information by the subgraphs and the queries, the information will no longer be presented in queries.
-
-#### Do subgraphs verify data and audit data before they push the data into the database?
-
-Yes, it is necessary for a subgraph to verify data sources and data before they push their data into the file. Each entity should come with a verification mechanism, for a block in a blockchain it would be to take the hash of the block. Before a node adds any piece of data to their database, it is necessary (built-in) for them to verify this data first. Along with verification, it is also necessary for these nodes to conduct the first audit on the entity before adding it to the database.
-
-#### How are these subgraphs given data?
-
-As stated previously, subgraphs get information from datasources. These datasources can be subgraphs, or external data sources. In the case of external data sources, subgraphs need to have access to the api for the data source, or they need to be able to synchronize/get updates from subgraphs that have access to these data sources.
-
-#### How expensive are audits?
-
-Audits require an extra "query", this does mean that they _can_ be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs represent an authenticated database and each query is validated from the same Merkle root, Proxima Query Nodes cannot give multiple different data for the same query. This means that Proxima Nodes will have to give the same incorrect query for each node if it cheats or acts maliciously. It also means that once a query has been auditted it adds security for every query that uses the same node (ensuring that the Merkle root is correct). The greater the volume of queries that are going to a subgraph, the lower amount of audits need to be done. In the end, for datasets that are used often will become faster and more secure.
-
-#### How are range queries, filters, and other database operations proven through the ProximaDB?
-
-At this point, the ProximaDB supplies a Proof-of-soundness for all queries (Range queries, filters, etc). This proof ensures that all data given is in the database. Further additions to the protocol involve including Proofs-of-Completeness, where it can be proven that the data given in a query is all of the data that matches a filter or range.
-
-This problem incorporates two subsets:
-
-- Range Queries
-  Ranges can be proven to be complete by looking at the ends of a sorted Merkle Trie, and building a partial Merkle Trie from it. This shows that there is no element outside of the desired range, and allows the querier to prove that every element within the query can build the partial tree. This topic has been breached in the Google [Sparse Merkle Trie](https://github.com/google/trillian), and [github discussions](https://gist.github.com/chris-belcher/eb9abe417d74a7b5f20aabe6bff10de0). In this case, we use a Merkle trie (a deterministically sorted tree) to ensure sorting, and we submit range queries to the keys.
-
-- Filter Queries
-  Filters where multiple requirements can be met, can be done by indexing an entity according to multiple constraints, submitting range queries to these different indexes and then doing a union or intersection based on the results of these queries.
-
-One difficulty of this approach is the difficulty of combining multiple range queries at the same time. There have been several approaches that utilize accumulators and aggregate functions to provide [efficient nonmembership proofs](https://www.cs.purdue.edu/homes/ninghui/papers/accumulator_acns07.pdf). The naive approach would be to include every element in the ranges with their proofs for membership/nonmembership. The proof would include the subset of all the entities that matched the requirements, and a set of those that do not. Proofs could be derived by checking membership/nonmembership for all filters.
-
-A potential alternative would be to encrypt the data via a homomorphic encryption of the [entire entity schema](https://www.math.u-bordeaux.fr/~gcastagn/publi/isit_homo.pdf), and to perform the boolean operations on the encrypted schema and filter. In cases where privacy is neceesary, this is a powerful alternative.
