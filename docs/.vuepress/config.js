@@ -2,6 +2,7 @@ module.exports = {
   title: 'Proxima',
   description: 'An authenticated database',
   themeConfig:  {
+    
     sidebar:
     {
       '/': [
@@ -14,8 +15,6 @@ module.exports = {
 
 
     }
-
-
 
      }
 }

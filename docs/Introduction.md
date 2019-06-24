@@ -1,4 +1,4 @@
-# Proxima
+# How it works
 
 ## What do we do?
 
