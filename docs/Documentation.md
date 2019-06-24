@@ -1,5 +1,5 @@
 
-# Developer Documentation
+# Documentation
 
 ::: warning
 ### *Currently under development*
