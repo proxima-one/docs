@@ -7,9 +7,9 @@ module.exports = {
       '/': [
         '',
         'Introduction',
-        'ProximaIndexNode',
-        'ProximaQueryNode',
-        'ProximaClient',
+        'Getting-Started',
+        'Documentation',
+        'Tutorials',
       'FAQ']
 
 

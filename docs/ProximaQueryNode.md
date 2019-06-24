@@ -1,2 +1,0 @@
-
-# Proxima Query Node

@@ -2,7 +2,8 @@
 
 ## What do we do?
 
-Blockchain data is tough to truly authenticate.
+**Blockchain data is tough to truly authenticate.**
+
 How do you know that you are getting accurate and sound data from the correct blockchain? You have no idea if the data coming from your account balance, query, or Decentralized application events are accurate and timely. The result can lead to major issues with visibility, analytics, and finances within your business. It can mean the difference between success or failure.
 
 ### Examples
