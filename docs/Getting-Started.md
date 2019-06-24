@@ -4,7 +4,6 @@
 ### *Currently under development*
 :::
 
-
 ## Proxima Index Nodes
 
 The Proxima Index Node is responsible for maintaining the registry, delegating deployments,

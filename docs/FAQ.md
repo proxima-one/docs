@@ -2,9 +2,6 @@
 
 _There are a variety of different security considerations that must be addressed within Proxima._
 
-## Why use a trie?
-
-Tries are used because they represent a data structure that is sorted and deterministic. This means that synchorinzations can occur in a distirbuted fashion (order of updates will not matter), and range queries can be done.
 
 ## Can audits or queries be fooled?
 
@@ -37,6 +34,11 @@ As stated previously, subgraphs get information from datasources. These datasour
 ## How expensive are audits?
 
 Audits require an extra "query", this does mean that they _can_ be expensive if used for every single entity within a query. To combat this cost, there are ways to optimize the time of each audit (batching, location of subgraphs), but the true optimization lies in use. Since subgraphs represent an authenticated database and each query is validated from the same Merkle root, Proxima Query Nodes cannot give multiple different data for the same query. This means that Proxima Nodes will have to give the same incorrect query for each node if it cheats or acts maliciously. It also means that once a query has been audited it adds security for every query that uses the same node (ensuring that the Merkle root is correct). The greater the volume of queries that are going to a subgraph, the lower amount of audits need to be done. In the end, for datasets that are used often will become faster and more secure.
+
+
+## Why use a trie?
+
+Tries are used because they represent a data structure that is sorted and deterministic. This means that synchorinzations can occur in a distirbuted fashion (order of updates will not matter), and range queries can be done.
 
 
 ## What is the genesis of Proxima?  How did it occur to you to use Urkel tree to create an efficient data layer for the blockchain?
@@ -78,10 +80,10 @@ At this point, the ProximaDB supplies a Proof-of-soundness for all queries (Rang
 
 This problem incorporates two subsets:
 
-- Range Queries
+- **Range Queries**
   Ranges can be proven to be complete by looking at the ends of a sorted Merkle Trie, and building a partial Merkle Trie from it. This shows that there is no element outside of the desired range, and allows the querier to prove that every element within the query can build the partial tree. This topic has been breached in the Google [Sparse Merkle Trie](https://github.com/google/trillian), and [github discussions](https://gist.github.com/chris-belcher/eb9abe417d74a7b5f20aabe6bff10de0). In this case, we use a Merkle trie (a deterministically sorted tree) to ensure sorting, and we submit range queries to the keys.
 
-- Filter Queries
+- **Filter Queries**
   Filters where multiple requirements can be met, can be done by indexing an entity according to multiple constraints, submitting range queries to these different indexes and then doing a union or intersection based on the results of these queries.
 
 One difficulty of this approach is the difficulty of combining multiple range queries at the same time. There have been several approaches that utilize accumulators and aggregate functions to provide [efficient nonmembership proofs](https://www.cs.purdue.edu/homes/ninghui/papers/accumulator_acns07.pdf). The naive approach would be to include every element in the ranges with their proofs for membership/nonmembership. The proof would include the subset of all the entities that matched the requirements, and a set of those that do not. Proofs could be derived by checking membership/nonmembership for all filters.
