@@ -16,7 +16,7 @@ Our goal is to decentralize the ability to provide data, interact with data to e
 
 Check us out!
 
-* `Website:` [Proxima.one](https://www.proxima.one/)
+//* `Website:` [Proxima.one](https://www.proxima.one/)
 
 * `Docs:` [Docs](https://proxima-one-docs.herokuapp.com)
 
