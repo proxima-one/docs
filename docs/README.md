@@ -16,7 +16,7 @@ Our goal is to decentralize the ability to provide data, interact with data to e
 
 Check us out!
 
-//* `Website:` [Proxima.one](https://www.proxima.one/)
+* `Website:` [Proxima.one](https://www.proxima.one/)
 
 * `Docs:` [Docs](https://proxima-one-docs.herokuapp.com)
 
@@ -25,3 +25,12 @@ Check us out!
 * `API:` [API](https://proxima-one-docs.herokuapp.com/Documentation.html)
 
 * `ProximaDB:` [ProximaDB](https://proxima-db-docs.herokuapp.com/)
+
+* `Papers:` [Motivational Research](https://github.com/proxima-one/research) 
+
+<!-- 
+Also to include: 
+- Client (Documentation)
+- Tutorials
+- Explorer
+-->
