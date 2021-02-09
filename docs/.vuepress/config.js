@@ -10,17 +10,16 @@ module.exports = {
         '',
         'Introduction',
         'Getting-Started',
-        //SDK docs/Getting-Started.md, Proxima-SDK
-        //DB Proxima-DB
-        //DATA vertex Data-Vertex
-        //Data Aggregator Data-Aggregator
-        //CLI
-        //Research
+        'CLI',
+        'Proxima-SDK',
+        'Proxima-Node',
+        'Data-Vertex',
+        'Data-Aggregator',
+        'Blockchain-Client',
+        "ProximaDB",
         //Architecture
-      'FAQ']
-
-
+        'Research',
+        'FAQ',]
     }
-
      }
 }

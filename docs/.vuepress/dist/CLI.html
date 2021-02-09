@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proxima Project Creation | Proxima</title>
+    <meta name="description" content="An authenticated database">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.bb534371.css" as="style"><link rel="preload" href="/assets/js/app.a53b89bb.js" as="script"><link rel="preload" href="/assets/js/2.0bdd1918.js" as="script"><link rel="preload" href="/assets/js/9.fc1936cc.js" as="script"><link rel="prefetch" href="/assets/js/10.34d8aea8.js"><link rel="prefetch" href="/assets/js/11.55ad9241.js"><link rel="prefetch" href="/assets/js/12.25856d36.js"><link rel="prefetch" href="/assets/js/13.66b05cac.js"><link rel="prefetch" href="/assets/js/14.a1d1a4ea.js"><link rel="prefetch" href="/assets/js/15.447e40dc.js"><link rel="prefetch" href="/assets/js/16.8aa77228.js"><link rel="prefetch" href="/assets/js/17.c3c38bc7.js"><link rel="prefetch" href="/assets/js/18.03be135f.js"><link rel="prefetch" href="/assets/js/19.92f74b8f.js"><link rel="prefetch" href="/assets/js/3.e5b4d07e.js"><link rel="prefetch" href="/assets/js/4.bb47b054.js"><link rel="prefetch" href="/assets/js/5.7814d92d.js"><link rel="prefetch" href="/assets/js/6.20fa2338.js"><link rel="prefetch" href="/assets/js/7.5cbb688e.js"><link rel="prefetch" href="/assets/js/8.f3258392.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bb534371.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Proxima</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Overview</a></li><li><a href="/Introduction.html" class="sidebar-link">How it works</a></li><li><a href="/Getting-Started.html" class="sidebar-link">Getting Started</a></li><li><a href="/CLI.html" class="active sidebar-link">Proxima Project Creation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/CLI.html#initialize-your-project" class="sidebar-link">Initialize Your Project</a></li><li class="sidebar-sub-header"><a href="/CLI.html#generating-project-code" class="sidebar-link">Generating project code</a></li><li class="sidebar-sub-header"><a href="/CLI.html#building-project" class="sidebar-link">Building Project</a></li><li class="sidebar-sub-header"><a href="/CLI.html#running-the-project" class="sidebar-link">Running the project</a></li><li class="sidebar-sub-header"><a href="/CLI.html#advanced-configurations" class="sidebar-link">Advanced Configurations</a></li></ul></li><li><a href="/Proxima-SDK.html" class="sidebar-link">Proxima SDK JS</a></li><li><a href="/Data-Vertex.html" class="sidebar-link">Proxima Data Vertex</a></li><li><a href="/Data-Aggregator.html" class="sidebar-link">/Data-Aggregator.html</a></li><li><a href="/Blockchain-Client.html" class="sidebar-link">Blockchain-Client</a></li><li><a href="/ProximaDB.html" class="sidebar-link">ProximaDB</a></li><li><a href="/Research.html" class="sidebar-link">Research</a></li><li><a href="/FAQ.html" class="sidebar-link">Considerations and Questions</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="proxima-project-creation"><a href="#proxima-project-creation" aria-hidden="true" class="header-anchor">#</a> Proxima Project Creation</h1> <p>Creating a project.</p> <h3 id="requirements"><a href="#requirements" aria-hidden="true" class="header-anchor">#</a> Requirements</h3> <p>Before installing and using the Proxima Command-line interface it is necessary to have:</p> <ul><li>Go</li> <li>Docker</li> <li>npm/yarn</li></ul> <h4 id="install-proxima-command-line-interface"><a href="#install-proxima-command-line-interface" aria-hidden="true" class="header-anchor">#</a> Install Proxima Command-line-interface</h4> <div class="language- extra-class"><pre class="language-text"><code>yarn add -g proxima-cli
+</code></pre></div><h2 id="initialize-your-project"><a href="#initialize-your-project" aria-hidden="true" class="header-anchor">#</a> Initialize Your Project</h2> <div class="language- extra-class"><pre class="language-text"><code>proxima init PROJECT_NAME
+</code></pre></div><p>Proxima will initialize an output directory for your project, with the correct structure to begin the project.</p> <div class="language- extra-class"><pre class="language-text"><code>PROJECT_NAME
++ abi
+  - abi files here
++ schema
+  - schema files here
+app_config.yml
+</code></pre></div><p>ABI</p> <div class="language- extra-class"><pre class="language-text"><code>+ contracts
+  - smartcontract1_name.json
+  - smartcontract2_name.json
+</code></pre></div><p>Schema
+GraphQL Schema</p> <p>App Config</p> <p>For now we look at the config.yml to include the contract address, the abi code, and datasource.</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>smart contract name<span class="token punctuation">]</span>
+<span class="token key atrule">abi</span><span class="token punctuation">:</span> ./abi/idex_abi.json
+<span class="token key atrule">contract</span><span class="token punctuation">:</span> <span class="token string">'0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208'</span>
+<span class="token key atrule">datasource</span><span class="token punctuation">:</span> Ethereum
+<span class="token key atrule">id</span><span class="token punctuation">:</span> ID
+<span class="token key atrule">owner</span><span class="token punctuation">:</span> Owner
+</code></pre></div><h2 id="generating-project-code"><a href="#generating-project-code" aria-hidden="true" class="header-anchor">#</a> Generating project code</h2> <p>Before rtunning generate ensure that the app_config.yml, the abi, and the schema.</p> <div class="language- extra-class"><pre class="language-text"><code>proxima generate .
+</code></pre></div><p>This generates the smart contract handlers (shown in DApp aggregator, and entities)</p> <p>Output Directory</p> <div class="language- extra-class"><pre class="language-text"><code>PROJECT_NAME
+
++ DApp aggregator
+  - smartcontract1_name
+    - functionHandlers
+    - eventHandlers
+  - smartcontract2_name
+    - ...
+    - ...
+</code></pre></div><h2 id="building-project"><a href="#building-project" aria-hidden="true" class="header-anchor">#</a> Building Project</h2> <div class="language- extra-class"><pre class="language-text"><code>proxima build .
+</code></pre></div><ul><li>config setup</li> <li>remote building of the container ...</li> <li>if local then pulls dockerfiles, builds the containers, tags them</li> <li>creates the docker compose file</li> <li>creates the ID and address</li></ul> <h2 id="running-the-project"><a href="#running-the-project" aria-hidden="true" class="header-anchor">#</a> Running the project</h2> <h3 id="starting"><a href="#starting" aria-hidden="true" class="header-anchor">#</a> Starting</h3> <div class="language- extra-class"><pre class="language-text"><code>proxima start ID/NAME
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Starting the node....
+Server is running on http://localhost:4000
+</code></pre></div><h3 id="stopping"><a href="#stopping" aria-hidden="true" class="header-anchor">#</a> Stopping</h3> <div class="language- extra-class"><pre class="language-text"><code>proxima stop ID/NAME
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Stopping the node....
+Server is running on http://localhost:4000
+</code></pre></div><h3 id="deploying-the-project"><a href="#deploying-the-project" aria-hidden="true" class="header-anchor">#</a> Deploying the project</h3> <div class="language- extra-class"><pre class="language-text"><code>proxima deploy ID/NAME
+</code></pre></div><p>Response of success, with id/name</p> <h3 id="pulling-previous-project"><a href="#pulling-previous-project" aria-hidden="true" class="header-anchor">#</a> Pulling previous project</h3> <div class="language- extra-class"><pre class="language-text"><code>proxima pull ID/NAME
+</code></pre></div><h2 id="advanced-configurations"><a href="#advanced-configurations" aria-hidden="true" class="header-anchor">#</a> Advanced Configurations</h2> <h3 id="database"><a href="#database" aria-hidden="true" class="header-anchor">#</a> Database</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>YOUR Name<span class="token punctuation">]</span>
+<span class="token key atrule">abi</span><span class="token punctuation">:</span> ./abi/idex_abi.json
+<span class="token key atrule">contract</span><span class="token punctuation">:</span> <span class="token string">'0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208'</span>
+<span class="token key atrule">datasource</span><span class="token punctuation">:</span> Ethereum
+<span class="token key atrule">id</span><span class="token punctuation">:</span> ID
+<span class="token key atrule">owner</span><span class="token punctuation">:</span> Owner
+</code></pre></div><h3 id="cache"><a href="#cache" aria-hidden="true" class="header-anchor">#</a> Cache</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>YOUR Name<span class="token punctuation">]</span>
+<span class="token key atrule">abi</span><span class="token punctuation">:</span> ./abi/idex_abi.json
+<span class="token key atrule">contract</span><span class="token punctuation">:</span> <span class="token string">'0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208'</span>
+<span class="token key atrule">datasource</span><span class="token punctuation">:</span> Ethereum
+<span class="token key atrule">id</span><span class="token punctuation">:</span> ID
+<span class="token key atrule">owner</span><span class="token punctuation">:</span> Owner
+</code></pre></div><h3 id="client"><a href="#client" aria-hidden="true" class="header-anchor">#</a> Client</h3> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>YOUR Name<span class="token punctuation">]</span>
+<span class="token key atrule">abi</span><span class="token punctuation">:</span> ./abi/idex_abi.json
+<span class="token key atrule">contract</span><span class="token punctuation">:</span> <span class="token string">'0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208'</span>
+<span class="token key atrule">datasource</span><span class="token punctuation">:</span> Ethereum
+<span class="token key atrule">id</span><span class="token punctuation">:</span> ID
+<span class="token key atrule">owner</span><span class="token punctuation">:</span> Owner
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/8/2021, 11:51:56 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Getting-Started.html" class="prev">
+        Getting Started
+      </a></span> <span class="next"><a href="/Proxima-SDK.html">
+        Proxima SDK JS
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.a53b89bb.js" defer></script><script src="/assets/js/2.0bdd1918.js" defer></script><script src="/assets/js/9.fc1936cc.js" defer></script>
+  </body>
+</html>
