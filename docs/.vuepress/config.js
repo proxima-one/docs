@@ -10,8 +10,13 @@ module.exports = {
         '',
         'Introduction',
         'Getting-Started',
-        'Documentation',
-        'Tutorials',
+        //SDK docs/Getting-Started.md, Proxima-SDK
+        //DB Proxima-DB
+        //DATA vertex Data-Vertex
+        //Data Aggregator Data-Aggregator
+        //CLI
+        //Research
+        //Architecture
       'FAQ']
 
 

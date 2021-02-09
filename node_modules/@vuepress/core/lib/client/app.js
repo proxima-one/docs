@@ -38,6 +38,7 @@ Vue.use(VuePress)
 Vue.mixin(dataMixin(ClientComputedMixin, siteData))
 // component for rendering markdown content and setting title etc.
 
+/* eslint-disable vue/match-component-file-name */
 Vue.component('Content', Content)
 Vue.component('ContentSlotsDistributor', ContentSlotsDistributor)
 Vue.component('OutboundLink', OutboundLink)
@@ -46,6 +47,7 @@ Vue.component('ClientOnly', ClientOnly)
 // core components
 Vue.component('Layout', getLayoutAsyncComponent('Layout'))
 Vue.component('NotFound', getLayoutAsyncComponent('NotFound'))
+/* eslint-disable-next-line vue/match-component-file-name */
 
 // global helper for adding base path to absolute urls
 Vue.prototype.$withBase = function (path) {
@@ -57,7 +59,7 @@ Vue.prototype.$withBase = function (path) {
   }
 }
 
-export function createApp (isServer) {
+export async function createApp (isServer) {
   const routerBase = typeof window !== 'undefined' && window.__VUEPRESS_ROUTER_BASE__
     ? window.__VUEPRESS_ROUTER_BASE__
     : (siteData.routerBase || siteData.base)
@@ -75,7 +77,7 @@ export function createApp (isServer) {
           return false
         }
         return {
-          selector: to.hash
+          selector: decodeURIComponent(to.hash)
         }
       } else {
         return { x: 0, y: 0 }
@@ -88,11 +90,11 @@ export function createApp (isServer) {
   const options = {}
 
   try {
-    appEnhancers.forEach(enhancer => {
-      if (typeof enhancer === 'function') {
-        enhancer({ Vue, options, router, siteData, isServer })
-      }
-    })
+    await Promise.all(
+      appEnhancers
+        .filter(enhancer => typeof enhancer === 'function')
+        .map(enhancer => enhancer({ Vue, options, router, siteData, isServer }))
+    )
   } catch (e) {
     console.error(e)
   }
@@ -102,7 +104,7 @@ export function createApp (isServer) {
       router,
       render (h) {
         return h('div', { attrs: { id: 'app' }}, [
-          h('router-view', { ref: 'layout' }),
+          h('RouterView', { ref: 'layout' }),
           h('div', { class: 'global-ui' }, globalUIComponents.map(component => h(component)))
         ])
       }

@@ -1,16 +1,21 @@
 {
-  "name": "proxima-docs",
+  "name": "docs",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/proxima-one/docs.git",
   "license": "MIT",
   "scripts": {
+    "build-docs": "node index.js",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "node index.js & vuepress build docs"
   },
   "devDependencies": {
     "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.0.2",
     "vuepress-plugin-tabs": "^0.2.2"
+  },
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.6.1"
   }
 }
