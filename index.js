@@ -11,10 +11,11 @@ const fetch = require('node-fetch');
 let externalDocs = {'ProximaDB': "https://raw.githubusercontent.com/proxima-one/ProximaDB/master/README.md",
 'Proxima-SDK': "https://raw.githubusercontent.com/proxima-one/proxima-sdk-js/master/README.md",
 'CLI': "https://raw.githubusercontent.com/proxima-one/proxima-cli/master/Readme.md",
-'Proxima-Node': "https://raw.githubusercontent.com/proxima-one/proxima-node/master/Readme.md",
-'Data-Vertex': "https://raw.githubusercontent.com/proxima-one/proxima-data-vertex/master/README.md",
-'Data-Aggregator': "https://raw.githubusercontent.com/proxima-one/Data-aggregator/master/Readme.md",
+'Proxima-Node': "https://raw.githubusercontent.com/proxima-one/proxima-node/master/README.md",
+'Data-Vertex': "https://raw.githubusercontent.com/proxima-one/data-vertex/master/README.md",
+'Data-Aggregator': "https://raw.githubusercontent.com/proxima-one/data-aggregator/master/README.md",
 'Blockchain-Client': "https://raw.githubusercontent.com/proxima-one/blockchain-Client/master/README.md",
+"Proxima Mesh": "https://raw.githubusercontent.com/proxima-one/proxima-mesh/master/README.md",
 "Research":  "https://raw.githubusercontent.com/proxima-one/research/master/README.md",
 }
 
