@@ -5,6 +5,7 @@ and managing load to Proxima query nodes. Query nodes are responsible for storin
 
 ## Proxima CLI
 
+
 ## Proxima SDK
 The Proxima client enables access to Proxima index nodes, and provides the tooling to submit and verify queries to the query nodes
 
