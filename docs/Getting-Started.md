@@ -1,11 +1,9 @@
 # Getting Started
 
-*The Proxima Index Node is responsible for maintaining the registry, delegating deployments,
-and managing load to Proxima query nodes. Query nodes are responsible for storing and delivering the query responses for the data.*
+*Proxima is a blockchain agnostic data layer that aggregates and transforms blockchain events, and loads them into an authenticated DApp index. It is designed to used by decentralized developers as a secure and efficient autehenticated data index for their decentralized application.*
 
 ## Proxima CLI
 [![](https://img.shields.io/badge/Visit%20Repo-Proxima%20CLI-brightgreen)](https://github.com/proxima-one/proxima-cli) 
-
 
 Description
 
