@@ -5,13 +5,12 @@
 ## Proxima CLI
 [![](https://img.shields.io/badge/Visit%20Repo-Proxima%20CLI-brightgreen)](https://github.com/proxima-one/proxima-cli) 
 
-Description
+The Proxima Command-line interface (CLI) enables the fast and efficient, initialization, generation, testing, and deployment of data vertices. It is also where developers will be able to manage their identity, run nodes, and scale data.
 
 ## Proxima SDK
 [![](https://img.shields.io/badge/Visit%20Repo-Proxima%20SDK-brightgreen)](https://github.com/proxima-one/proxima-sdk-js) 
 
-The Proxima client enables access to Proxima index nodes, and provides the tooling to submit and verify queries to the query nodes
-
+The Proxima SDK facilitates interactions with the Proxima node and data vertices, including the routing of data requests, proof verification, and the construction of fraud proofs. The SDK is used throughout the Proxima Protocol, within the data aggregator, the Proxima node, and the data vertices, as well as being the main developer interaction interface when querying the network.
 
 
 ## Contributing
