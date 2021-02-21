@@ -4,14 +4,11 @@
 ### *Currently under development*
 :::
 
-## Proxima Index Nodes
-
+## Proxima Nodes
 The Proxima Index Node is responsible for maintaining the registry, delegating deployments,
 and managing load to Proxima query nodes.
 
-
-
-## Proxima Query Nodes
+## Data Vertex
 Query nodes are responsible for storing and delivering the query responses for the data.
 
 

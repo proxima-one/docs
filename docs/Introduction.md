@@ -12,7 +12,7 @@ How do you know that you are getting accurate and sound data from the correct bl
 - _How many users are there? What do my orders look like?_
 - _What is my account balance? What transactions have I been a part of?_
 
-When dealing with data security it is not enough to “trust”. Proxima provides the convenience, feature set, and speed of centralized providers **AND** maintains the audibility and trustlessness of the blockchain.
+When dealing with data security it is not enough to “trust”. Proxima provides the convenience, feature set, and speed of centralized providers **AND** maintains the audibility and security of the blockchain.
 
 ## Our goal
 Decentralize the ability to **provide data, interact with data** to **empower DApp developers**, provide tools that **speed up the creation of DApps**, and **drive adoption of blockchain technology**. Our solution is general enough to **enable our decentralized data providers** to provide data for DApps **for several blockchains / smart contract platforms**, while basing our **security on the consensus of the blockchain that the data is coming from**.
@@ -31,18 +31,6 @@ Queries for data in Proxima need to have only one hop, this creates an experienc
 - **Lower cost**
 Traditional approaches for data delivery, require large clusters of nodes to run consensus on individual queries. This is ineffective, and lowers the security. Through Proxima, each query does not need trust because it can be audited. This lowers the cost to serve a query to match traditional standards. Furthermore, it does not need trust so it opens up the ability to serve data which can further drop the price.
 
-## Stakeholders
-*There exist three major stakeholders in the Proxima ecosystem.*
-
-- **Blockchains**
-Blockchains suffer from two major issues adoption and data delivery. In order to be sustainable blockchains need to have a way to easily get data from the chain, and they need a highly secure, cost effective method to maintain this infrastructure indefinitely. Through Proxima, these blockchains do not need to compromise on any of these aspects.
-
-- **Decentralized Applications**
-Decentralized applications can use Proxima, as a method for maintaining an easy connection to the data that preserves security. Instead of building their own custom caching and data solutions, these applications can build ontop of a highly secure, blazing fast data provider.
-
-- **Users**
-Users receive faster performance and a more diverse experience. This can be seen with faster page load times, and a real-time experience.  
-
 
 ### Features
 
@@ -51,6 +39,19 @@ Users receive faster performance and a more diverse experience. This can be seen
 - _Blockchain agnostic_
 - _Trustless data_
 - _Performant queries_
+
+
+## Stakeholders
+*There exist three major stakeholders in the Proxima ecosystem.*
+
+- **Blockchains**
+Blockchains suffer from two major issues adoption and data delivery. In order to be sustainable blockchains need to have a way to easily get data from the chain, and they need a highly secure, cost effective method to maintain this infrastructure indefinitely. Through Proxima, these blockchains do not need to compromise on any of these aspects.
+
+- **Decentralized Applications**
+Decentralized applications can use Proxima, as a method for maintaining an easy connection to the data that preserves security. Instead of building their own custom caching and data solutions, these applications can build on top of a highly secure, blazing fast data provider.
+
+- **Users**
+Users receive faster performance and a more diverse experience. This can be seen with faster page load times, and a real-time experience.  
 
 ### Example Use Case
 
